@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Bookopcl : MonoBehaviour {
 
-		public GameObject Cube;
+		public GameObject Book;
 
-		public void ActiveCube(){
+		public void AcktiveBook(){
 //		Cube.SetActive(true);
-				if (!Cube.activeInHierarchy) 
-				{
-				Cube.SetActive (true);
-				}
-				else 
-					{
-				Cube.SetActive (false);
-					}
+		if (!Book.activeInHierarchy) 
+			{
+			Book.SetActive (true);
 			}
+		else 
+			{
+			Book.SetActive (false);
+			}
+		}
 
 
 	}
