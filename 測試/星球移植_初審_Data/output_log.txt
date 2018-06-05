@@ -19,7 +19,7 @@ Platform assembly: D:\Main-unity\測試\星球移植_初審_Data\Managed\UnityEn
 Loading D:\Main-unity\測試\星球移植_初審_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
 Platform assembly: D:\Main-unity\測試\星球移植_初審_Data\Managed\System.dll (this message is harmless)
 Platform assembly: D:\Main-unity\測試\星球移植_初審_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.240 seconds
+- Completed reload, in  0.019 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
@@ -27,7 +27,7 @@ The referenced script on this Behaviour (Game Object 'button anvas') is missing!
  
 (Filename:  Line: 1758)
 
-UnloadTime: 0.826289 ms
+UnloadTime: 0.820280 ms
 OpenVR initialized!
  
 (Filename:  Line: 584)
@@ -38,10 +38,10 @@ Connected to lighthouse:LHR-0FAFBA95
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 2350 -> priority: 1 
-  Thread -> id: c64 -> priority: 1 
-  Thread -> id: 2e18 -> priority: 1 
-  Thread -> id: 2aa0 -> priority: 1 
+  Thread -> id: 1e90 -> priority: 1 
+  Thread -> id: 3ca0 -> priority: 1 
+  Thread -> id: 412c -> priority: 1 
+  Thread -> id: 2c4 -> priority: 1 
 OpenVR Shutdown
  
 (Filename:  Line: 1253)
