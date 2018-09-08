@@ -13,6 +13,14 @@ public class createCrop : MonoBehaviour {
 	DateTime matureTime;//植物成熟的時間(計算的值)
 	bool isPlanting = false;
 
+	/*enum PumpkinStatus{
+		PumpkinGrowing_01,
+		PumpkinGrowing_02,
+		PumpkinGrowing_03,
+		PumpkinGrowing_04,
+		PumpkinGrowing_Die
+	}*/
+
 	void OnTriggerEnter(Collider seed){ //aaa為自定義碰撞事件
 
 		if (seed.gameObject.name == "pumpkinSeed"){ //如果aaa碰撞事件的物件標籤名稱是Seed
@@ -49,6 +57,10 @@ public class createCrop : MonoBehaviour {
 			}
 		}
 
+		/*switch (remainingSeconds_toString) {
+			case '5':
+				
+		}*/
 	}
 
 	IEnumerator toPlantState02(float s){//幾秒後，跳轉到下一個程式
