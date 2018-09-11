@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class createCrop : MonoBehaviour {
+public class createPumpkin : MonoBehaviour {
 
 	public string plantingTime_toString;//種植當下的時間
 	public string matureTime_toString;//植物成熟的時間(計算的值)
@@ -23,7 +23,7 @@ public class createCrop : MonoBehaviour {
 
 	void OnTriggerEnter(Collider seed){ //aaa為自定義碰撞事件
 
-		if (seed.gameObject.name == "pumpkinSeed"){ //如果aaa碰撞事件的物件標籤名稱是Seed
+		if (seed.gameObject.name == "pumpkin_00_Seed"){ //如果aaa碰撞事件的物件標籤名稱是Seed
 
 			Destroy(seed.gameObject); //刪除碰撞到的物件(Seed)
 
