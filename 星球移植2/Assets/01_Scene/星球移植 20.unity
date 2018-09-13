@@ -46167,6 +46167,8 @@ MonoBehaviour:
   plantingTime_toString: 
   matureTime_toString: 
   remainingSeconds_toString: 
+  GameStatus: 0
+  pumpkinStatus: 0
 --- !u!65 &1334101501
 BoxCollider:
   m_ObjectHideFlags: 0
