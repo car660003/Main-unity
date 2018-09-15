@@ -31,8 +31,10 @@ public class createPumpkin : MonoBehaviour {
 		if (seed.gameObject.name == "pumpkin_00_Seed"){ //如果aaa碰撞事件的物件標籤名稱是Seed
 			countMatureTime ();
 			Destroy(seed.gameObject); //刪除碰撞到的物件(Seed)
-			PumpkinSTATUS pumpkinStatus = PumpkinSTATUS.PumpkinGrowing_01;
+			pumpkinStatus = PumpkinSTATUS.PumpkinGrowing_01;
 			isPlanting = true;//判斷是否有種植作物
+			plantingTime_toString = plantingTime.ToString ();//把種植當下時間列出來
+			matureTime_toString = matureTime.ToString ();
 		}
 	}
 	// Use this for initialization
@@ -40,7 +42,7 @@ public class createPumpkin : MonoBehaviour {
 		
 	}
 	void Awake(){
-		//GameStatus = (int)PumpkinSTATUS.empty;
+		pumpkinStatus = PumpkinSTATUS.empty;
 	}
 	
 	// Update is called once per frame
@@ -56,7 +58,18 @@ public class createPumpkin : MonoBehaviour {
 			case PumpkinSTATUS.PumpkinGrowing_01:
 				PumpkinGrowing_01 ();
 				break;
-			//case PumpkinStatus.PumpkinGrowing_02:
+			case PumpkinSTATUS.PumpkinGrowing_02:
+				PumpkinGrowing_02 ();
+				break;
+			case PumpkinSTATUS.PumpkinGrowing_03:
+				PumpkinGrowing_03 ();
+				break;
+			case PumpkinSTATUS.PumpkinGrowing_04:
+				PumpkinGrowing_04 ();
+				break;
+			/*case PumpkinSTATUS.PumpkinGrowing_01:
+				PumpkinGrowing_01 ();
+				break;*/
 			
 		}
 	}
@@ -67,18 +80,29 @@ public class createPumpkin : MonoBehaviour {
 	}
 
 	public void PumpkinGrowing_01(){
-		
-		plantingTime_toString = plantingTime.ToString ();//把種植當下時間列出來
-		matureTime_toString = matureTime.ToString ();
-
 		GameObject pfb = Resources.Load ("pumpkin/pumpkin_01") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		prefabInstance.transform.parent = this.transform;//設為子物件
 		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+0.1f, this.transform.position.z);
-		//prefabInstance.transform.rotation = Quaternion.Euler( -90, 0, 0);
-		//StartCoroutine (toPlantState02 (10));
-
-		//StartCoroutine (toPlantState02 (5));
+		prefabInstance.transform.rotation = Quaternion.Euler (new Vector3 (0, 60, 0));
+	}
+	public void PumpkinGrowing_02(){
+		GameObject pfb = Resources.Load ("pumpkin/pumpkin_02") as GameObject;//產生Pumpkin
+		GameObject prefabInstance = Instantiate (pfb);
+		prefabInstance.transform.parent = this.transform;//設為子物件
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+0.1f, this.transform.position.z);
+	}
+	public void PumpkinGrowing_03(){
+		GameObject pfb = Resources.Load ("pumpkin/pumpkin_03") as GameObject;//產生Pumpkin
+		GameObject prefabInstance = Instantiate (pfb);
+		prefabInstance.transform.parent = this.transform;//設為子物件
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+0.1f, this.transform.position.z);
+	}
+	public void PumpkinGrowing_04(){
+		GameObject pfb = Resources.Load ("pumpkin/pumpkin_04") as GameObject;//產生Pumpkin
+		GameObject prefabInstance = Instantiate (pfb);
+		prefabInstance.transform.parent = this.transform;//設為子物件
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+0.1f, this.transform.position.z);
 	}
 
 
