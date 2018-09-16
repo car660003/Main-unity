@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Random = UnityEngine.Random;
 
 public class createPumpkin : MonoBehaviour {
 
@@ -12,9 +13,10 @@ public class createPumpkin : MonoBehaviour {
 	DateTime plantingTime;//種植時間
 	DateTime matureTime;//植物成熟的時間(計算的值)
 	bool isPlanting = false;
-	//public int GameStatus;
+	bool changeStatus = false;
 	[SerializeField]
 	PumpkinSTATUS pumpkinStatus;
+
 
 	//[System.Serializable]
 	enum PumpkinSTATUS{
@@ -33,6 +35,7 @@ public class createPumpkin : MonoBehaviour {
 			Destroy(seed.gameObject); //刪除碰撞到的物件(Seed)
 			pumpkinStatus = PumpkinSTATUS.PumpkinGrowing_01;
 			isPlanting = true;//判斷是否有種植作物
+			changeStatus = true;
 			plantingTime_toString = plantingTime.ToString ();//把種植當下時間列出來
 			matureTime_toString = matureTime.ToString ();
 		}
@@ -55,17 +58,29 @@ public class createPumpkin : MonoBehaviour {
 		}
 
 		switch (pumpkinStatus) {
-			case PumpkinSTATUS.PumpkinGrowing_01:
+		case PumpkinSTATUS.PumpkinGrowing_01:
+			if (changeStatus) {	
 				PumpkinGrowing_01 ();
+				changeStatus = false;
+			}
 				break;
 			case PumpkinSTATUS.PumpkinGrowing_02:
+			if (changeStatus) {	
 				PumpkinGrowing_02 ();
+				changeStatus = false;
+			}
 				break;
 			case PumpkinSTATUS.PumpkinGrowing_03:
+			if (changeStatus) {	
 				PumpkinGrowing_03 ();
+				changeStatus = false;
+			}
 				break;
 			case PumpkinSTATUS.PumpkinGrowing_04:
+			if (changeStatus) {	
 				PumpkinGrowing_04 ();
+				changeStatus = false;
+			}
 				break;
 			/*case PumpkinSTATUS.PumpkinGrowing_01:
 				PumpkinGrowing_01 ();
@@ -84,7 +99,13 @@ public class createPumpkin : MonoBehaviour {
 		GameObject prefabInstance = Instantiate (pfb);
 		prefabInstance.transform.parent = this.transform;//設為子物件
 		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+0.1f, this.transform.position.z);
-		prefabInstance.transform.rotation = Quaternion.Euler (new Vector3 (0, 60, 0));
+		//float rot = Random.rotation.z;
+		/*Quaternion quate = Quaternion.identity;
+		float Rot_z = Random.rotation.z;
+		quate.eulerAngles = new Vector3 (0, 0, Rot_z);
+		prefabInstance.transform.rotation = quate;*/
+		/*var rot = Random.rotation.z;
+		prefabInstance.transform.rotation = Quaternion.Euler (0f,0f,rot);*/
 	}
 	public void PumpkinGrowing_02(){
 		GameObject pfb = Resources.Load ("pumpkin/pumpkin_02") as GameObject;//產生Pumpkin
