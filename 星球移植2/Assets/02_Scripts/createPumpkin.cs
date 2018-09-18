@@ -13,12 +13,11 @@ public class createPumpkin : MonoBehaviour {
 	DateTime plantingTime;//種植時間
 	DateTime matureTime;//植物成熟的時間(計算的值)
 	bool isPlanting = false;
-	bool changeStatus = false;
+	public bool changeStatus = false;
 	[SerializeField]
 	PumpkinSTATUS pumpkinStatus;
 
 
-	//[System.Serializable]
 	enum PumpkinSTATUS{
 		empty,
 		PumpkinGrowing_01,
@@ -30,14 +29,13 @@ public class createPumpkin : MonoBehaviour {
 
 	void OnTriggerEnter(Collider seed){ //aaa為自定義碰撞事件
 
-		if (seed.gameObject.name == "pumpkin_00_Seed"){ //如果aaa碰撞事件的物件標籤名稱是Seed
-			countMatureTime ();
+		if (seed.gameObject.tag == "pumpkinSeed"){ //如果aaa碰撞事件的物件標籤名稱是Seed
 			Destroy(seed.gameObject); //刪除碰撞到的物件(Seed)
 			pumpkinStatus = PumpkinSTATUS.PumpkinGrowing_01;
+			countMatureTime ();
 			isPlanting = true;//判斷是否有種植作物
-			changeStatus = true;
-			plantingTime_toString = plantingTime.ToString ();//把種植當下時間列出來
-			matureTime_toString = matureTime.ToString ();
+			changeStatus = true;//允許改變status
+
 		}
 	}
 	// Use this for initialization
@@ -50,50 +48,85 @@ public class createPumpkin : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(isPlanting){//種植之後才會計算距離成熟前的剩餘秒數
+		if(isPlanting){//種植之後才會計算距離當階段成熟前的剩餘秒數
 			remainingSeconds_toString = matureTime.Subtract (DateTime.Now).Duration ().ToString ();
-			if(DateTime.Compare(DateTime.Now,matureTime)>0){//現在時間超過成熟時間
-				remainingSeconds_toString = "已成熟!";
-			}
+			plantingTime_toString = plantingTime.ToString ();//把種植當下時間列出來
+			matureTime_toString = matureTime.ToString ();
 		}
 
-		switch (pumpkinStatus) {
+		switch (pumpkinStatus) { //判斷當前狀態，並執行要做的事情
 		case PumpkinSTATUS.PumpkinGrowing_01:
-			if (changeStatus) {	
+			if (changeStatus) {	//如果允許改變stutas，執行PumpkinGrowing_01 ();，並不允許改變stutas
 				PumpkinGrowing_01 ();
 				changeStatus = false;
 			}
+			if(DateTime.Compare(DateTime.Now,matureTime)>0){//若現在時間超過當階段成熟時間,改變stutas至下一個階段
+				pumpkinStatus = PumpkinSTATUS.PumpkinGrowing_02;
+				countMatureTime ();
+				changeStatus = true;
+			}
 				break;
+
 			case PumpkinSTATUS.PumpkinGrowing_02:
 			if (changeStatus) {	
 				PumpkinGrowing_02 ();
 				changeStatus = false;
 			}
+			if(DateTime.Compare(DateTime.Now,matureTime)>0){//現在時間超過成熟時間
+				pumpkinStatus = PumpkinSTATUS.PumpkinGrowing_03;
+				countMatureTime ();
+				changeStatus = true;
+			}
 				break;
+
 			case PumpkinSTATUS.PumpkinGrowing_03:
 			if (changeStatus) {	
 				PumpkinGrowing_03 ();
 				changeStatus = false;
 			}
+			if(DateTime.Compare(DateTime.Now,matureTime)>0){//現在時間超過成熟時間
+				pumpkinStatus = PumpkinSTATUS.PumpkinGrowing_04;
+				countMatureTime ();
+				changeStatus = true;
+			}
 				break;
+
 			case PumpkinSTATUS.PumpkinGrowing_04:
 			if (changeStatus) {	
 				PumpkinGrowing_04 ();
 				changeStatus = false;
 			}
+			if(DateTime.Compare(DateTime.Now,matureTime)>0){//現在時間超過成熟時間
+				remainingSeconds_toString = "已成熟!";
+			}
 				break;
-			/*case PumpkinSTATUS.PumpkinGrowing_01:
-				PumpkinGrowing_01 ();
-				break;*/
-			
 		}
 	}
 
-	public void countMatureTime(){
+	public void countMatureTime(){//計算當下階段剩餘時間
 		plantingTime = DateTime.Now;//把種植當下時間存起來
-		matureTime = plantingTime.AddSeconds(20);//植物成熟的時間(計算的值)
+
+		switch (pumpkinStatus) {
+		case PumpkinSTATUS.PumpkinGrowing_01:
+			matureTime = plantingTime.AddSeconds(3);//植物當下階段應當成熟成熟的時間(計算的值)
+			break;
+		case PumpkinSTATUS.PumpkinGrowing_02:
+			matureTime = plantingTime.AddSeconds(10);
+			break;
+		case PumpkinSTATUS.PumpkinGrowing_03:
+			matureTime = plantingTime.AddSeconds(10);
+			break;
+		case PumpkinSTATUS.PumpkinGrowing_04:
+			matureTime = plantingTime.AddSeconds(15);
+			break;
+			/*case PumpkinSTATUS.PumpkinGrowing_01:
+				PumpkinGrowing_01 ();
+				break;*/
+
+		}
 	}
 
+	//生成物件
 	public void PumpkinGrowing_01(){
 		GameObject pfb = Resources.Load ("pumpkin/pumpkin_01") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
@@ -108,24 +141,27 @@ public class createPumpkin : MonoBehaviour {
 		prefabInstance.transform.rotation = Quaternion.Euler (0f,0f,rot);*/
 	}
 	public void PumpkinGrowing_02(){
+		Destroy (transform.GetChild (1).gameObject);
 		GameObject pfb = Resources.Load ("pumpkin/pumpkin_02") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		prefabInstance.transform.parent = this.transform;//設為子物件
 		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+0.1f, this.transform.position.z);
 	}
 	public void PumpkinGrowing_03(){
+		Destroy (transform.GetChild (1).gameObject);
 		GameObject pfb = Resources.Load ("pumpkin/pumpkin_03") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		prefabInstance.transform.parent = this.transform;//設為子物件
 		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+0.1f, this.transform.position.z);
 	}
 	public void PumpkinGrowing_04(){
+		Destroy (transform.GetChild (1).gameObject);
 		GameObject pfb = Resources.Load ("pumpkin/pumpkin_04") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		prefabInstance.transform.parent = this.transform;//設為子物件
 		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+0.1f, this.transform.position.z);
 	}
-
+}
 
 	/*IEnumerator toPlantState02(float s){//幾秒後，跳轉到下一個程式
 		yield return new WaitForSeconds (s);
@@ -156,4 +192,4 @@ public class createPumpkin : MonoBehaviour {
 		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+0.1f, this.transform.position.z);
 		//prefabInstance.transform.rotation = Quaternion.Euler( -90, 0, 0);
 	}*/
-}
+

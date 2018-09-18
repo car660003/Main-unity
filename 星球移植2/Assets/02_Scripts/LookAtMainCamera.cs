@@ -5,6 +5,7 @@ using UnityEngine;
 public class LookAtMainCamera : MonoBehaviour {
 
 	// Use this for initialization
+	public GameObject fatherFeild;
 	void Start () {
 
 	}	
@@ -13,7 +14,9 @@ public class LookAtMainCamera : MonoBehaviour {
 
 
 		//当前对象始终面向摄像机。
+		//this.transform = Quaternion.LookRotation(Camera.main.transform.position);
 		this.transform.LookAt(Camera.main.transform.position);
 		this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(Camera.main.transform.position - this.transform.position),0);
+		this.transform.position = new Vector3 (fatherFeild.transform.position.x,fatherFeild.transform.position.y+1.7f,fatherFeild.transform.position.z);
 	}
 }
