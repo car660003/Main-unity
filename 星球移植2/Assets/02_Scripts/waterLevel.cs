@@ -22,7 +22,7 @@ public class waterLevel : MonoBehaviour {
 			water += Time.deltaTime;
 		}*/
 		if(waterParticle.tag.Equals("WaterParticle")){
-			water += 1;
+			water += Time.deltaTime;
 			a = true;
 		}
 	}

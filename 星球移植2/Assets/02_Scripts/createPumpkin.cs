@@ -16,6 +16,7 @@ public class createPumpkin : MonoBehaviour {
 	public bool changeStatus = false;
 	[SerializeField]
 	PumpkinSTATUS pumpkinStatus;
+	//public float waterLevel;
 
 
 	enum PumpkinSTATUS{
@@ -44,6 +45,7 @@ public class createPumpkin : MonoBehaviour {
 		countMatureTime ();
 		isPlanting = true;//判斷是否有種植作物
 		changeStatus = true;//允許改變status
+		//waterLevel = GetComponents<waterLevel>();
 	}
 	void Awake(){
 		
