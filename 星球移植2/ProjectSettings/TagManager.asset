@@ -6,6 +6,8 @@ TagManager:
   tags:
   - WaterParticle
   - pumpkinSeed
+  - Fire
+  - task
   layers:
   - Default
   - TransparentFX
