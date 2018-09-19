@@ -27,7 +27,7 @@ public class createPumpkin : MonoBehaviour {
 		PumpkinGrowing_Die
 	}
 
-	void OnTriggerEnter(Collider seed){ //aaa為自定義碰撞事件
+	/*void OnTriggerEnter(Collider seed){ //aaa為自定義碰撞事件
 
 		if (seed.gameObject.tag == "pumpkinSeed"){ //如果aaa碰撞事件的物件標籤名稱是Seed
 			Destroy(seed.gameObject); //刪除碰撞到的物件(Seed)
@@ -37,13 +37,16 @@ public class createPumpkin : MonoBehaviour {
 			changeStatus = true;//允許改變status
 
 		}
-	}
+	}*/
 	// Use this for initialization
 	void Start () {
-		
+		pumpkinStatus = PumpkinSTATUS.PumpkinGrowing_01;
+		countMatureTime ();
+		isPlanting = true;//判斷是否有種植作物
+		changeStatus = true;//允許改變status
 	}
 	void Awake(){
-		pumpkinStatus = PumpkinSTATUS.empty;
+		
 	}
 	
 	// Update is called once per frame
