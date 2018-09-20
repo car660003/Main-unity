@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class harvestPumkin : MonoBehaviour {
     private TasksPerformed task;
+	//public createPumpkin remainingSeconds_toString;
 	// Use this for initialization
 	void Start () {
         task = GameObject.FindGameObjectWithTag("task").GetComponent<TasksPerformed>();
+		//remainingSeconds_toString = gameObject.GetComponent<createPumpkin>();
 	}
 	
 	// Update is called once per frame
@@ -18,6 +20,7 @@ public class harvestPumkin : MonoBehaviour {
 			pumpkin.pumpkinCount++;
             task.addplant("pumpkin");
             Destroy(this.gameObject);
+			Destroy (this.GetComponent<createPumpkin>());
 		}
 
 	}
