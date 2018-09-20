@@ -17,6 +17,6 @@ public class LookAtMainCamera : MonoBehaviour {
 		//this.transform = Quaternion.LookRotation(Camera.main.transform.position);
 		this.transform.LookAt(Camera.main.transform.position);
 		this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(Camera.main.transform.position - this.transform.position),0);
-		this.transform.position = new Vector3 (fatherFeild.transform.position.x,fatherFeild.transform.position.y+1.7f,fatherFeild.transform.position.z);
+		this.transform.position = new Vector3 (fatherFeild.transform.position.x,fatherFeild.transform.position.y+2.5f,fatherFeild.transform.position.z);
 	}
 }

@@ -123,16 +123,16 @@ public class createPumpkin : MonoBehaviour {
 
 		switch (pumpkinStatus) {
 		case PumpkinSTATUS.PumpkinGrowing_01:
-			matureTime = plantingTime.AddSeconds(3);//植物當下階段應當成熟成熟的時間(計算的值)
+			matureTime = plantingTime.AddSeconds(5);//植物當下階段應當成熟成熟的時間(計算的值)
 			break;
 		case PumpkinSTATUS.PumpkinGrowing_02:
-			matureTime = plantingTime.AddSeconds(10);
+			matureTime = plantingTime.AddSeconds(5);
 			break;
 		case PumpkinSTATUS.PumpkinGrowing_03:
-			matureTime = plantingTime.AddSeconds(10);
+			matureTime = plantingTime.AddSeconds(5);
 			break;
 		case PumpkinSTATUS.PumpkinGrowing_04:
-			matureTime = plantingTime.AddSeconds(15);
+			matureTime = plantingTime.AddSeconds(10);
 			break;
 			/*case PumpkinSTATUS.PumpkinGrowing_01:
 				PumpkinGrowing_01 ();
