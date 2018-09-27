@@ -121,7 +121,7 @@ Material:
     - _NormalsDisplacement: 0
     - _ReflDistort: 0.9267696
     - _RefrDistort: 1.4393286
-    - _Shininess: 318.04
+    - _Shininess: 296
     - _ShoreTiling: 56.862743
     - _Speed: 0.4137931
     - _TargetValue: 0

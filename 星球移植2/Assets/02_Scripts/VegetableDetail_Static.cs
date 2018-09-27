@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class VegetableMainMessange{
-	public static string playerChoice = "";
+	public static int money = 0;
 }
 
 public static class VegetableDetail_Static {
