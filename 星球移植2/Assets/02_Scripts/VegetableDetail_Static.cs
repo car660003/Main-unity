@@ -14,5 +14,9 @@ public static class VegetableDetail_Static {
 
 public static class pumpkin{
 	public static int pumpkinCount = 0;
+	public static float PumpkinGrowing_01To02_time = 10;
+	public static float PumpkinGrowing_02To03_time = 20;
+	public static float PumpkinGrowing_03To04_time = 30;
+	public static float hp = 100;
 }
 

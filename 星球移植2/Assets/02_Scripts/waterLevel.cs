@@ -6,6 +6,7 @@ public class waterLevel : MonoBehaviour {
 
 	public float water = 0;
 	public bool a =false;
+	public bool isPlanting = false;
 
 
 	// Use this for initialization
@@ -22,9 +23,12 @@ public class waterLevel : MonoBehaviour {
 		/*if(gameObject.GetComponents<createPumpkin>()){
 			water += Time.deltaTime;
 		}*/
+		//鎖定種植後加水才會增加水量
 		if(waterParticle.tag.Equals("WaterParticle")){
-			water += Time.deltaTime;
-			a = true;
+			if(isPlanting){
+				water += Time.deltaTime;
+				a = true;
+			}
 		}
 	}
 }
