@@ -7,22 +7,17 @@ using Random = UnityEngine.Random;
 
 public class createPumpkin : MonoBehaviour {
 
-	public string remainingSeconds_toString = "";
-
-	DateTime plantingTime;//種植時間
 	public string plantingTime_toString;//種植當下的時間
-
-	DateTime matureTime;//植物成熟的時間(計算的值)
 	public string matureTime_toString;//植物成熟的時間(計算的值)
-
+	public string remainingSeconds_toString = "";
+	DateTime plantingTime;//種植時間
+	DateTime matureTime;//植物成熟的時間(計算的值)
 	public bool isPlanting = false;
 	public bool changeStatus = false;
 	[SerializeField]
 	PumpkinSTATUS pumpkinStatus;
 	public waterLevel waterLevel;
 	public float water;
-
-	public float hp = 100;
 
 
 	enum PumpkinSTATUS{
@@ -34,11 +29,23 @@ public class createPumpkin : MonoBehaviour {
 		PumpkinGrowing_Die
 	}
 
+	/*void OnTriggerEnter(Collider seed){ //aaa為自定義碰撞事件
+
+		if (seed.gameObject.tag == "pumpkinSeed"){ //如果aaa碰撞事件的物件標籤名稱是Seed
+			Destroy(seed.gameObject); //刪除碰撞到的物件(Seed)
+			pumpkinStatus = PumpkinSTATUS.PumpkinGrowing_01;
+			countMatureTime ();
+			isPlanting = true;//判斷是否有種植作物
+			changeStatus = true;//允許改變status
+
+		}
+	}*/
 	// Use this for initialization
 	void Start () {
 		pumpkinStatus = PumpkinSTATUS.empty;
+		countMatureTime ();
+		//waterLevel waterLevel = (waterLevel)transform.GetComponent(typeof(waterLevel));
 		waterLevel = gameObject.GetComponent<waterLevel>();
-
 	}
 	void Awake(){
 		
@@ -46,24 +53,17 @@ public class createPumpkin : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//種植之後才會計算距離當階段成熟前的剩餘秒數
-		if(isPlanting){
+		if(isPlanting){//種植之後才會計算距離當階段成熟前的剩餘秒數
 			remainingSeconds_toString = matureTime.Subtract (DateTime.Now).Duration ().ToString ();
 			plantingTime_toString = plantingTime.ToString ();//把種植當下時間列出來
 			matureTime_toString = matureTime.ToString ();
-
-			hp += (waterLevel.water-water)*2;
-			hp -= Time.deltaTime/2;
 		}
-
-		water = waterLevel.water; //獲得waterLevel裡面water變數
-
-		//判斷當前狀態，並執行要做的事情
-		switch (pumpkinStatus) { 
+		water = waterLevel.water;
+		switch (pumpkinStatus) { //判斷當前狀態，並執行要做的事情
 			case PumpkinSTATUS.empty:
 				if(water>=3){
+					
 					pumpkinStatus = PumpkinSTATUS.PumpkinGrowing_01;
-					countMatureTime ();
 					isPlanting = true;//判斷是否有種植作物
 					changeStatus = true;//允許改變status
 				}
@@ -118,20 +118,26 @@ public class createPumpkin : MonoBehaviour {
 		}
 	}
 
-	//計算當下階段剩餘時間
 	public void countMatureTime(){//計算當下階段剩餘時間
 		plantingTime = DateTime.Now;//把種植當下時間存起來
 
 		switch (pumpkinStatus) {
 		case PumpkinSTATUS.PumpkinGrowing_01:
-			matureTime = plantingTime.AddSeconds(180);//植物當下階段應當成熟成熟的時間(計算的值)
+			matureTime = plantingTime.AddSeconds(5);//植物當下階段應當成熟成熟的時間(計算的值)
 			break;
 		case PumpkinSTATUS.PumpkinGrowing_02:
-			matureTime = plantingTime.AddSeconds(180);
+			matureTime = plantingTime.AddSeconds(5);
 			break;
 		case PumpkinSTATUS.PumpkinGrowing_03:
-			matureTime = plantingTime.AddSeconds(180);
+			matureTime = plantingTime.AddSeconds(5);
 			break;
+		case PumpkinSTATUS.PumpkinGrowing_04:
+			matureTime = plantingTime.AddSeconds(10);
+			break;
+			/*case PumpkinSTATUS.PumpkinGrowing_01:
+				PumpkinGrowing_01 ();
+				break;*/
+
 		}
 	}
 
