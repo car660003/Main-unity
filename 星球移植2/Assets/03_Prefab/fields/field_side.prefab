@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4808406174183046}
   - component: {fileID: 114489856147673968}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: showWaterVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 33113403131892008}
   - component: {fileID: 64170908534738500}
   - component: {fileID: 23675135866154566}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

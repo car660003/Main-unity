@@ -8,10 +8,6 @@ TagManager:
   - pumpkinSeed
   - Fire
   - task
-  - cucumberSeed
-  - eggplantSeed
-  - carrotSeed
-  - tomatoSeed
   layers:
   - Default
   - TransparentFX
@@ -21,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - showWaterVolume
+  - 
   - 
   - 
   - 

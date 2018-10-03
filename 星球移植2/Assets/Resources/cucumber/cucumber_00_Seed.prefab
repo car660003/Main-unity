@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 136534718272151714}
   m_Layer: 0
   m_Name: cucumber_00_Seed
-  m_TagString: cucumberSeed
+  m_TagString: pumpkinSeed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
