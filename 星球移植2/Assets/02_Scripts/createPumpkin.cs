@@ -137,7 +137,7 @@ public class createPumpkin : MonoBehaviour {
 		GameObject pfb = Resources.Load ("pumpkin/pumpkin_01") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		prefabInstance.transform.parent = this.transform;//設為子物件
-		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+0.9f, this.transform.position.z);
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+1f, this.transform.position.z);
 		//float rot = Random.rotation.z;
 		/*Quaternion quate = Quaternion.identity;
 		float Rot_z = Random.rotation.z;
@@ -151,21 +151,21 @@ public class createPumpkin : MonoBehaviour {
 		GameObject pfb = Resources.Load ("pumpkin/pumpkin_02") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		prefabInstance.transform.parent = this.transform;//設為子物件
-		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+0.9f, this.transform.position.z);
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+1f, this.transform.position.z);
 	}
 	public void PumpkinGrowing_03(){
 		Destroy (transform.GetChild (2).gameObject);
 		GameObject pfb = Resources.Load ("pumpkin/pumpkin_03") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		prefabInstance.transform.parent = this.transform;//設為子物件
-		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+0.9f, this.transform.position.z);
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+1f, this.transform.position.z);
 	}
 	public void PumpkinGrowing_04(){
 		Destroy (transform.GetChild (2).gameObject);
 		GameObject pfb = Resources.Load ("pumpkin/pumpkin_04") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		prefabInstance.transform.parent = this.transform;//設為子物件
-		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+0.9f, this.transform.position.z);
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+1f, this.transform.position.z);
 	}
 }
 

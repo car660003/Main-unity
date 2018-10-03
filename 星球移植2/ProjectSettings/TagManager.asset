@@ -8,6 +8,12 @@ TagManager:
   - pumpkinSeed
   - Fire
   - task
+  - FxTemporaire
+  - projectile
+  - TeleportIgnore
+  - carrotSeed
+  - cucumberSeed
+  - eggplantSeed
   layers:
   - Default
   - TransparentFX
