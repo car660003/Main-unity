@@ -39,6 +39,7 @@ public class createPumpkin : MonoBehaviour {
 		waterLevel = gameObject.GetComponent<waterLevel>();
 		waterLevel.isPlanting = true;	//鎖定種植後加水才會增加水量
 		hp = pumpkin.hp;	//獲得VegetableDetail_Static裡面pumpkin的生命值
+		countMatureTime ();
 	}
 	void Awake(){
 		
@@ -60,11 +61,17 @@ public class createPumpkin : MonoBehaviour {
 		switch (pumpkinStatus) {
 			case PumpkinSTATUS.empty:
 				if(water>=3){
-					
-					pumpkinStatus = PumpkinSTATUS.PumpkinGrowing_01;
+					isPlanting = true;
+					if(DateTime.Compare(DateTime.Now,matureTime)>0){//若現在時間超過當階段成熟時間,改變stutas至下一個階段
+						pumpkinStatus = PumpkinSTATUS.PumpkinGrowing_01;
+						countMatureTime ();
+						//isPlanting = true;//判斷是否有種植作物
+						changeStatus = true;//允許改變status
+					}
+					/*pumpkinStatus = PumpkinSTATUS.PumpkinGrowing_01;
 					countMatureTime ();
 					isPlanting = true;//判斷是否有種植作物
-					changeStatus = true;//允許改變status
+					changeStatus = true;//允許改變status*/
 				}
 				break;
 
@@ -120,14 +127,17 @@ public class createPumpkin : MonoBehaviour {
 		plantingTime = DateTime.Now;//把種植當下時間存起來
 
 		switch (pumpkinStatus) {
+		case PumpkinSTATUS.empty:
+			matureTime = plantingTime.AddSeconds(pumpkin.growing_00To01_time);//植物當下階段應當成熟成熟的時間(計算的值)
+			break;
 		case PumpkinSTATUS.PumpkinGrowing_01:
-			matureTime = plantingTime.AddSeconds(pumpkin.PumpkinGrowing_01To02_time);//植物當下階段應當成熟成熟的時間(計算的值)
+			matureTime = plantingTime.AddSeconds(pumpkin.growing_01To02_time);//植物當下階段應當成熟成熟的時間(計算的值)
 			break;
 		case PumpkinSTATUS.PumpkinGrowing_02:
-			matureTime = plantingTime.AddSeconds(pumpkin.PumpkinGrowing_02To03_time);
+			matureTime = plantingTime.AddSeconds(pumpkin.growing_02To03_time);
 			break;
 		case PumpkinSTATUS.PumpkinGrowing_03:
-			matureTime = plantingTime.AddSeconds(pumpkin.PumpkinGrowing_03To04_time);
+			matureTime = plantingTime.AddSeconds(pumpkin.growing_03To04_time);
 			break;
 		}
 	}
