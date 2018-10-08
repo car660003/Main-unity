@@ -16,12 +16,29 @@ public class harvestPumkin : MonoBehaviour {
 		
 	}
 	void OnTriggerEnter(Collider sickle){
-		if(sickle.gameObject.name == "sickle"){
-			pumpkin.pumpkinCount++;
-            task.addplant("pumpkin");
-			//Destroy (remainingSeconds_toString.GetComponents<createPumpkin>());
-            Destroy(this.gameObject);
+		if(gameObject.tag!="dead"){
+			if(sickle.gameObject.name == "sickle"){
+				if(gameObject.tag=="pumpkin"){
+					pumpkin.Count++;
+					task.addplant("pumpkin");
+					Destroy(this.gameObject);
+
+				}else if(gameObject.tag=="cucumber"){
+					cucumber.Count++;
+					task.addplant("cucumber");
+					Destroy(this.gameObject);
+
+				}else if(gameObject.tag=="carrot"){
+					carrot.Count++;
+					task.addplant("carrot");
+					Destroy(this.gameObject);
+
+				}
+			}
+		}else if(gameObject.tag=="dead"){
+			Destroy(this.gameObject);
 		}
 
+
 	}
-}
+}//Destroy (remainingSeconds_toString.GetComponents<createPumpkin>());

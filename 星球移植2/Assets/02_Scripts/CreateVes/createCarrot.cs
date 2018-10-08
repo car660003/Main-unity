@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System;
 using Random = UnityEngine.Random;
 
-public class createCucumber : MonoBehaviour {
+public class createCarrot : MonoBehaviour {
 
 	public string plantingTime_toString;//種植當下的時間
 	DateTime plantingTime;//種植時間
@@ -38,7 +38,7 @@ public class createCucumber : MonoBehaviour {
 		growingSTATUS = GrowingSTATUS.empty;
 		waterLevel = gameObject.GetComponent<waterLevel>();
 		waterLevel.isPlanting = true;	//鎖定種植後加水才會增加水量
-		hp = cucumber.hp;	//獲得VegetableDetail_Static裡面pumpkin的生命值
+		hp = carrot.hp;	//獲得VegetableDetail_Static裡面pumpkin的生命值
 		countMatureTime ();
 	}
 	void Awake(){
@@ -53,7 +53,7 @@ public class createCucumber : MonoBehaviour {
 			matureTime_toString = matureTime.ToString ();
 
 			hp += waterLevel.water - water;	//每秒增加的水量加上目前的hp值
-			hp -= Time.deltaTime / cucumber.hpPerS;	//每秒扣一部份的hp
+			hp -= Time.deltaTime / carrot.hpPerS;	//每秒扣一部份的hp
 		}
 
 		if(hp<=0){//判定血量<=0，執行死亡
@@ -71,19 +71,14 @@ public class createCucumber : MonoBehaviour {
 					if(DateTime.Compare(DateTime.Now,matureTime)>0){//若現在時間超過當階段成熟時間,改變stutas至下一個階段
 						growingSTATUS = GrowingSTATUS.Growing_01;
 						countMatureTime ();
-						//isPlanting = true;//判斷是否有種植作物
 						changeStatus = true;//允許改變status
 					}
-					/*pumpkinStatus = PumpkinSTATUS.PumpkinGrowing_01;
-					countMatureTime ();
-					isPlanting = true;//判斷是否有種植作物
-					changeStatus = true;//允許改變status*/
 				}
 				break;
 
 			case GrowingSTATUS.Growing_01:
 				if (changeStatus) {	//如果允許改變stutas，執行PumpkinGrowing_01 ();，並不允許改變stutas
-					CucumberGrowing_01 ();
+					CarrotGrowing_01 ();
 					changeStatus = false;
 				}
 				if(DateTime.Compare(DateTime.Now,matureTime)>0){//若現在時間超過當階段成熟時間,改變stutas至下一個階段
@@ -95,7 +90,7 @@ public class createCucumber : MonoBehaviour {
 
 			case GrowingSTATUS.Growing_02:
 				if (changeStatus) {	
-					CucumberGrowing_02 ();
+					CarrotGrowing_02 ();
 					changeStatus = false;
 				}
 				if(DateTime.Compare(DateTime.Now,matureTime)>0){//現在時間超過成熟時間
@@ -107,7 +102,7 @@ public class createCucumber : MonoBehaviour {
 
 			case GrowingSTATUS.Growing_03:
 				if (changeStatus) {	
-					CucumberGrowing_03 ();
+					CarrotGrowing_03 ();
 					changeStatus = false;
 				}
 				if(DateTime.Compare(DateTime.Now,matureTime)>0){//現在時間超過成熟時間
@@ -119,7 +114,7 @@ public class createCucumber : MonoBehaviour {
 
 			case GrowingSTATUS.Growing_04:
 				if (changeStatus) {	
-					CucumberGrowing_04 ();
+					CarrotGrowing_04 ();
 					changeStatus = false;
 				}
 				if(DateTime.Compare(DateTime.Now,matureTime)>0){//現在時間超過成熟時間
@@ -129,7 +124,7 @@ public class createCucumber : MonoBehaviour {
 
 			case GrowingSTATUS.Growing_Die:
 				if (changeStatus) {	
-					CucumberGrowing_die ();
+					CarrotGrowing_die ();
 					changeStatus = false;
 				}
 				remainingSeconds_toString = "已死亡!";
@@ -142,51 +137,52 @@ public class createCucumber : MonoBehaviour {
 
 		switch (growingSTATUS) {
 		case GrowingSTATUS.empty:
-			matureTime = plantingTime.AddSeconds(cucumber.growing_00To01_time);//植物當下階段應當成熟成熟的時間(計算的值)
+			matureTime = plantingTime.AddSeconds(carrot.growing_00To01_time);//植物當下階段應當成熟成熟的時間(計算的值)
 			break;
 		case GrowingSTATUS.Growing_01:
-			matureTime = plantingTime.AddSeconds(cucumber.growing_01To02_time);//植物當下階段應當成熟成熟的時間(計算的值)
+			matureTime = plantingTime.AddSeconds(carrot.growing_01To02_time);//植物當下階段應當成熟成熟的時間(計算的值)
 			break;
 		case GrowingSTATUS.Growing_02:
-			matureTime = plantingTime.AddSeconds(cucumber.growing_02To03_time);
+			matureTime = plantingTime.AddSeconds(carrot.growing_02To03_time);
 			break;
 		case GrowingSTATUS.Growing_03:
-			matureTime = plantingTime.AddSeconds(cucumber.growing_03To04_time);
+			matureTime = plantingTime.AddSeconds(carrot.growing_03To04_time);
 			break;
 		}
 	}
 
 	//生成物件
-	public void CucumberGrowing_01(){
-		GameObject pfb = Resources.Load ("cucumber/cucumber_01") as GameObject;//產生Pumpkin
+	public void CarrotGrowing_01(){
+		GameObject pfb = Resources.Load ("carrot/carrot_01") as GameObject;//產生Pumpkin
+		GameObject prefabInstance = Instantiate (pfb);
+		prefabInstance.transform.parent = this.transform;//設為子物件
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+1f, this.transform.position.z);
+
+	}
+	public void CarrotGrowing_02(){
+		Destroy (transform.GetChild (2).gameObject);
+		GameObject pfb = Resources.Load ("carrot/carrot_02") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		prefabInstance.transform.parent = this.transform;//設為子物件
 		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+1f, this.transform.position.z);
 	}
-	public void CucumberGrowing_02(){
+	public void CarrotGrowing_03(){
 		Destroy (transform.GetChild (2).gameObject);
-		GameObject pfb = Resources.Load ("cucumber/cucumber_02") as GameObject;//產生Pumpkin
+		GameObject pfb = Resources.Load ("carrot/carrot_03") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		prefabInstance.transform.parent = this.transform;//設為子物件
 		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+1f, this.transform.position.z);
 	}
-	public void CucumberGrowing_03(){
+	public void CarrotGrowing_04(){
 		Destroy (transform.GetChild (2).gameObject);
-		GameObject pfb = Resources.Load ("cucumber/cucumber_03") as GameObject;//產生Pumpkin
+		GameObject pfb = Resources.Load ("carrot/carrot_04") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		prefabInstance.transform.parent = this.transform;//設為子物件
 		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+1f, this.transform.position.z);
 	}
-	public void CucumberGrowing_04(){
+	public void CarrotGrowing_die(){
 		Destroy (transform.GetChild (2).gameObject);
-		GameObject pfb = Resources.Load ("cucumber/cucumber_04") as GameObject;//產生Pumpkin
-		GameObject prefabInstance = Instantiate (pfb);
-		prefabInstance.transform.parent = this.transform;//設為子物件
-		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+1f, this.transform.position.z);
-	}
-	public void CucumberGrowing_die(){
-		Destroy (transform.GetChild (2).gameObject);
-		GameObject pfb = Resources.Load ("cucumber/cucumber_die") as GameObject;//產生Pumpkin
+		GameObject pfb = Resources.Load ("carrot/carrot_die") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		prefabInstance.transform.parent = this.transform;//設為子物件
 		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+1f, this.transform.position.z);

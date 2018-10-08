@@ -56,6 +56,12 @@ public class createPumpkin : MonoBehaviour {
 			hp -= Time.deltaTime / pumpkin.hpPerS;	//每秒扣一部份的hp
 		}
 
+		if(hp<=0){//判定血量<=0，執行死亡
+			changeStatus = true;
+			growingSTATUS = GrowingSTATUS.Growing_Die;
+
+		}
+
 		water = waterLevel.water;
 		//判斷當前狀態，並執行要做的事情
 		switch (growingSTATUS) {
@@ -120,6 +126,14 @@ public class createPumpkin : MonoBehaviour {
 					remainingSeconds_toString = "已成熟!";
 				}
 					break;
+
+			case GrowingSTATUS.Growing_Die:
+				if (changeStatus) {	
+					PumpkinGrowing_die ();
+					changeStatus = false;
+				}
+				remainingSeconds_toString = "已死亡!";
+				break;
 		}
 	}
 
@@ -173,6 +187,13 @@ public class createPumpkin : MonoBehaviour {
 	public void PumpkinGrowing_04(){
 		Destroy (transform.GetChild (2).gameObject);
 		GameObject pfb = Resources.Load ("pumpkin/pumpkin_04") as GameObject;//產生Pumpkin
+		GameObject prefabInstance = Instantiate (pfb);
+		prefabInstance.transform.parent = this.transform;//設為子物件
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+1f, this.transform.position.z);
+	}
+	public void PumpkinGrowing_die(){
+		Destroy (transform.GetChild (2).gameObject);
+		GameObject pfb = Resources.Load ("pumpkin/pumpkin_die") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		prefabInstance.transform.parent = this.transform;//設為子物件
 		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y+1f, this.transform.position.z);
