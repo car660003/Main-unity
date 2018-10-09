@@ -19,6 +19,7 @@ TagManager:
   - pumpkin
   - cucumber
   - carrot
+  - eggplant
   layers:
   - Default
   - TransparentFX

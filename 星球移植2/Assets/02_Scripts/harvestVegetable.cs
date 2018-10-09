@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class harvestPumkin : MonoBehaviour {
+public class harvestVegetable : MonoBehaviour {
     private TasksPerformed task;
 	public createPumpkin remainingSeconds_toString;
 	// Use this for initialization
@@ -31,6 +31,11 @@ public class harvestPumkin : MonoBehaviour {
 				}else if(gameObject.tag=="carrot"){
 					carrot.Count++;
 					task.addplant("carrot");
+					Destroy(this.gameObject);
+
+				}else if(gameObject.tag=="eggplant"){
+					eggplant.Count++;
+					task.addplant("eggplant");
 					Destroy(this.gameObject);
 
 				}
