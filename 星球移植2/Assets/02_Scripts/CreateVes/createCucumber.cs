@@ -59,7 +59,8 @@ public class createCucumber : MonoBehaviour {
 		if(hp<=0){//判定血量<=0，執行死亡
 			changeStatus = true;
 			growingSTATUS = GrowingSTATUS.Growing_Die;
-
+			isPlanting = false;
+			remainingSeconds_toString = "已死亡!";
 		}
 
 		water = waterLevel.water;
@@ -71,13 +72,8 @@ public class createCucumber : MonoBehaviour {
 					if(DateTime.Compare(DateTime.Now,matureTime)>0){//若現在時間超過當階段成熟時間,改變stutas至下一個階段
 						growingSTATUS = GrowingSTATUS.Growing_01;
 						countMatureTime ();
-						//isPlanting = true;//判斷是否有種植作物
 						changeStatus = true;//允許改變status
 					}
-					/*pumpkinStatus = PumpkinSTATUS.PumpkinGrowing_01;
-					countMatureTime ();
-					isPlanting = true;//判斷是否有種植作物
-					changeStatus = true;//允許改變status*/
 				}
 				break;
 
@@ -132,7 +128,7 @@ public class createCucumber : MonoBehaviour {
 					CucumberGrowing_die ();
 					changeStatus = false;
 				}
-				remainingSeconds_toString = "已死亡!";
+				
 				break;
 		}
 	}

@@ -4,11 +4,33 @@ using UnityEngine;
 
 public class harvestVegetable : MonoBehaviour {
     private TasksPerformed task;
-	public createPumpkin remainingSeconds_toString;
+	public waterLevel waterLevel;
+	public bool ontri = false;
+
+	public createPumpkin createPumpkin;
+	public createCarrot createCarrot;
+	public createTomato createTomato;
+	public createCucumber createCucumber;
+	public createEggplant createEggplant;
+
+
+
 	// Use this for initialization
 	void Start () {
         task = GameObject.FindGameObjectWithTag("task").GetComponent<TasksPerformed>();
-		remainingSeconds_toString = gameObject.GetComponentInParent<createPumpkin>();
+		waterLevel = gameObject.GetComponentInParent<waterLevel>();
+
+		//獲得土壤中的create植物.cs
+		createPumpkin = gameObject.GetComponentInParent<createPumpkin>();
+		createCarrot = gameObject.GetComponentInParent<createCarrot>();
+		createTomato = gameObject.GetComponentInParent<createTomato>();
+		createCucumber = gameObject.GetComponentInParent<createCucumber>();
+		createEggplant = gameObject.GetComponentInParent<createEggplant>();
+
+		/*if(createVeg_cs!=null){
+			ontri = true;
+		}*/
+
 	}
 	
 	// Update is called once per frame
@@ -16,33 +38,57 @@ public class harvestVegetable : MonoBehaviour {
 		
 	}
 	void OnTriggerEnter(Collider sickle){
-		if(gameObject.tag!="dead"){
+		
 			if(sickle.gameObject.name == "sickle"){
+
+			Destroy (createPumpkin); //刪除腳本
+			Destroy (createCarrot); 
+			Destroy (createTomato); 
+			Destroy (createCucumber); 
+			Destroy (createEggplant); 
+
 				if(gameObject.tag=="pumpkin"){
 					pumpkin.Count++;
 					task.addplant("pumpkin");
-					Destroy(this.gameObject);
+					waterLevel.water = 0;
+					waterLevel.isPlanting = false;
+					Destroy(gameObject);
 
 				}else if(gameObject.tag=="cucumber"){
 					cucumber.Count++;
 					task.addplant("cucumber");
-					Destroy(this.gameObject);
+					waterLevel.water = 0;
+					waterLevel.isPlanting = false;
+					Destroy(gameObject);
 
 				}else if(gameObject.tag=="carrot"){
 					carrot.Count++;
 					task.addplant("carrot");
-					Destroy(this.gameObject);
+					waterLevel.water = 0;
+					waterLevel.isPlanting = false;
+					Destroy(gameObject);
 
 				}else if(gameObject.tag=="eggplant"){
 					eggplant.Count++;
 					task.addplant("eggplant");
-					Destroy(this.gameObject);
+					waterLevel.water = 0;
+					waterLevel.isPlanting = false;
+					Destroy(gameObject);
 
-				}
-			}
-		}else if(gameObject.tag=="dead"){
-			Destroy(this.gameObject);
+				}else if(gameObject.tag=="tomato"){
+					tomato.Count++;
+					task.addplant("tomato");
+					waterLevel.water = 0;
+					waterLevel.isPlanting = false;
+					Destroy(gameObject);
+
+				}else if(gameObject.tag=="dead"){
+					waterLevel.water = 0;
+					waterLevel.isPlanting = false;
+					Destroy(gameObject);
+				}	
 		}
+		
 
 
 	}

@@ -59,7 +59,8 @@ public class createCarrot : MonoBehaviour {
 		if(hp<=0){//判定血量<=0，執行死亡
 			changeStatus = true;
 			growingSTATUS = GrowingSTATUS.Growing_Die;
-
+			isPlanting = false;
+			remainingSeconds_toString = "已死亡!";
 		}
 
 		water = waterLevel.water;
@@ -127,7 +128,6 @@ public class createCarrot : MonoBehaviour {
 					CarrotGrowing_die ();
 					changeStatus = false;
 				}
-				remainingSeconds_toString = "已死亡!";
 				break;
 		}
 	}

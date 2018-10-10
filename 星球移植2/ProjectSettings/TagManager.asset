@@ -20,6 +20,7 @@ TagManager:
   - cucumber
   - carrot
   - eggplant
+  - tomato
   layers:
   - Default
   - TransparentFX

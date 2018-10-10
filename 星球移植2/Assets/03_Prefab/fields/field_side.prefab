@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4808406174183046}
   - component: {fileID: 114489856147673968}
+  - component: {fileID: 114355772946481534}
   m_Layer: 0
   m_Name: showWaterVolume
   m_TagString: Untagged
@@ -158,8 +159,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1158826395837050}
-  m_LocalRotation: {x: -0.000000014901159, y: -0.70710677, z: -0.7071068, w: -0.00000004470348}
-  m_LocalPosition: {x: -0.30808, y: 0.00011253, z: 0.24998}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -13.353863, y: 0.0006737709, z: 0.2500251}
   m_LocalScale: {x: 1, y: 1.0000006, z: 1.0000005}
   m_Children:
   - {fileID: 4808406174183046}
@@ -180,7 +181,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7248efd47b703d441bfea2d27a952e46, type: 2}
+  - {fileID: 2100000, guid: d5d45faf3712b734eb61ccfe6a462615, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -212,7 +213,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: cdd7429197b56234aae08c239d2beec3, type: 2}
+  - {fileID: 2100000, guid: d5d45faf3712b734eb61ccfe6a462615, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -338,6 +339,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6eabd6fb8ebd9a4082e1d75c9aec263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waterLevel: {fileID: 0}
+  isPlanting: 0
+--- !u!114 &114355772946481534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1045607781033666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef76324b38498a47a765d3027d451c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114489856147673968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -361,5 +375,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   water: 0
-  a: 0
   isPlanting: 0

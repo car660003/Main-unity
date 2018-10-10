@@ -59,7 +59,8 @@ public class createPumpkin : MonoBehaviour {
 		if(hp<=0){//判定血量<=0，執行死亡
 			changeStatus = true;
 			growingSTATUS = GrowingSTATUS.Growing_Die;
-
+			isPlanting = false;
+			remainingSeconds_toString = "已死亡!";
 		}
 
 		water = waterLevel.water;
@@ -132,7 +133,6 @@ public class createPumpkin : MonoBehaviour {
 					PumpkinGrowing_die ();
 					changeStatus = false;
 				}
-				remainingSeconds_toString = "已死亡!";
 				break;
 		}
 	}

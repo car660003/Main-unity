@@ -5,7 +5,6 @@ using UnityEngine;
 public class waterLevel : MonoBehaviour {
 
 	public float water = 0;
-	public bool a =false;
 	public bool isPlanting = false;
 
 
@@ -27,7 +26,6 @@ public class waterLevel : MonoBehaviour {
 		if(waterParticle.tag.Equals("WaterParticle")){
 			if(isPlanting){
 				water += Time.deltaTime;
-				a = true;
 			}
 		}
 	}

@@ -595,9 +595,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4826664934512468}
+  - component: {fileID: 65747078662190428}
+  - component: {fileID: 114526515784301718}
   m_Layer: 0
   m_Name: eggplant_04
-  m_TagString: Untagged
+  m_TagString: eggplant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2244,7 +2246,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1472298959331786}
-  m_LocalRotation: {x: -0.74731004, y: 0.30836558, z: 0.0032691075, w: 0.5885811}
+  m_LocalRotation: {x: -0.74731004, y: 0.30836558, z: 0.0032691073, w: 0.5885811}
   m_LocalPosition: {x: 0.06339988, y: 0.6566702, z: 0.08714228}
   m_LocalScale: {x: 0.22976364, y: 0.28379947, z: 0.22976357}
   m_Children: []
@@ -2492,7 +2494,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374255840698304}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.572075, y: -0.75407887, z: -6.387268}
+  m_LocalPosition: {x: 13.905, y: -0.792, z: -5.958}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4499548718440380}
@@ -6048,6 +6050,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1845772867220716}
   m_Mesh: {fileID: 4300076, guid: 6cf926d136b9cf548bb3d32a215fc1f0, type: 3}
+--- !u!65 &65747078662190428
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1374255840698304}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35424805, y: 1.4036694, z: 0.29748535}
+  m_Center: {x: -0.019004822, y: 0.7136779, z: -0.06718445}
 --- !u!95 &95594323065698220
 Animator:
   serializedVersion: 3
@@ -6065,3 +6079,16 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114526515784301718
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1374255840698304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c787cf05762cc4da3a54afee590e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  remainingSeconds_toString: {fileID: 0}
+  waterLevel: {fileID: 0}
