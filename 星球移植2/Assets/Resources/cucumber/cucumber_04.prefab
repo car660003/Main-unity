@@ -126,7 +126,7 @@ Transform:
   m_GameObject: {fileID: 1860435429182714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2758259, y: 1.275826, z: 1.275826}
+  m_LocalScale: {x: 0.8149579, y: 0.814958, z: 0.814958}
   m_Children:
   - {fileID: 4540350480491766}
   - {fileID: 4672294640588832}
@@ -251,5 +251,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88c787cf05762cc4da3a54afee590e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remainingSeconds_toString: {fileID: 0}
   waterLevel: {fileID: 0}
+  ontri: 0
+  createPumpkin: {fileID: 0}
+  createCarrot: {fileID: 0}
+  createTomato: {fileID: 0}
+  createCucumber: {fileID: 0}
+  createEggplant: {fileID: 0}

@@ -5431,5 +5431,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88c787cf05762cc4da3a54afee590e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remainingSeconds_toString: {fileID: 0}
   waterLevel: {fileID: 0}
+  ontri: 0
+  createPumpkin: {fileID: 0}
+  createCarrot: {fileID: 0}
+  createTomato: {fileID: 0}
+  createCucumber: {fileID: 0}
+  createEggplant: {fileID: 0}
