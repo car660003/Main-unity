@@ -22,7 +22,7 @@ public class changeWaterVolume : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//GetComponent<MeshRenderer>().materials[0] = meshRender;
-		rend.sharedMaterial = meshRender;
+		rend.material = meshRender;
 		isPlanting = waterLevel.isPlanting;
 
 
