@@ -75,6 +75,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4575122434937212}
   - component: {fileID: 95695072305827618}
+  - component: {fileID: 114574506248570438}
   m_Layer: 0
   m_Name: "\u571F-\u6709\u5761"
   m_TagString: Untagged
@@ -159,8 +160,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1158826395837050}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -13.353863, y: 0.0006737709, z: 0.2500251}
+  m_LocalRotation: {x: -0.000000014901159, y: -0.70710677, z: -0.7071068, w: -0.00000004470348}
+  m_LocalPosition: {x: -0.30808, y: 0.00011253, z: 0.24998}
   m_LocalScale: {x: 1, y: 1.0000006, z: 1.0000005}
   m_Children:
   - {fileID: 4808406174183046}
@@ -245,7 +246,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0c418a7efca691a41bc509fbe43f22b9, type: 2}
+  - {fileID: 2100000, guid: 31b31a8cc0bda0648a493eed5dd0d811, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -352,6 +353,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ef76324b38498a47a765d3027d451c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 0
+  waterLevel: {fileID: 0}
+  isPlanting: 0
+  meshRender: {fileID: 0}
+  rend: {fileID: 0}
+  createPumpkin: {fileID: 0}
+  createCarrot: {fileID: 0}
+  createTomato: {fileID: 0}
+  createCucumber: {fileID: 0}
+  createEggplant: {fileID: 0}
+  hp: 0
 --- !u!114 &114489856147673968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -363,6 +375,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f91fab698bff27041b3260e9c438bfcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114574506248570438
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1737038663082884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0efb5f6ad0f404ca4e6bac62f3ac02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterLevel: {fileID: 0}
+  field01: 0
+  field01Alpha: 255
+  field02: 0
+  field02Alpha: 0
 --- !u!114 &114634597437923840
 MonoBehaviour:
   m_ObjectHideFlags: 1

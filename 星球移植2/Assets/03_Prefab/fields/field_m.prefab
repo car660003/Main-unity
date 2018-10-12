@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4071141604116518}
   - component: {fileID: 95248979653340728}
+  - component: {fileID: 114976900422679938}
   m_Layer: 0
   m_Name: "\u571F"
   m_TagString: Untagged
@@ -181,7 +182,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0c418a7efca691a41bc509fbe43f22b9, type: 2}
+  - {fileID: 2100000, guid: 31b31a8cc0bda0648a493eed5dd0d811, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -353,6 +354,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 0
+  waterLevel: {fileID: 0}
+  isPlanting: 0
+  meshRender: {fileID: 0}
+  rend: {fileID: 0}
+  createPumpkin: {fileID: 0}
+  createCarrot: {fileID: 0}
+  createTomato: {fileID: 0}
+  createCucumber: {fileID: 0}
+  createEggplant: {fileID: 0}
+  hp: 0
 --- !u!114 &114392884593909008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -377,3 +388,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f91fab698bff27041b3260e9c438bfcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114976900422679938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1333365480748376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0efb5f6ad0f404ca4e6bac62f3ac02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterLevel: {fileID: 0}
+  meshRender: {fileID: 0}
+  rend: {fileID: 0}
