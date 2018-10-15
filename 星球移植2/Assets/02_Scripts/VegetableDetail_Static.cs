@@ -14,10 +14,10 @@ public static class VegetableDetail_Static {
 
 public static class pumpkin{//60
 	public static int Count = 0;
-	public static float growing_00To01_time = 180;//3分鐘
-	public static float growing_01To02_time = 720;//12
-	public static float growing_02To03_time = 1200;//20
-	public static float growing_03To04_time = 1500;//25
+	public static float growing_00To01_time = 20;//3分鐘
+	public static float growing_01To02_time = 20;//12
+	public static float growing_02To03_time = 20;//20
+	public static float growing_03To04_time = 20;//25
 	public static float hp = 200;
 	public static float hpPerS = 2;//值越大，扣的hp越少(每秒)
 }
