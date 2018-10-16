@@ -29,7 +29,7 @@ public class UIImageVeg : MonoBehaviour {
 		// PathA 和 PathB 的距離乘上 speed
 		firstSpeed = Vector3.Distance(Obj.transform.position, PathB.transform.position) * speed;
 		firstPathObj = gameObject.transform.position;//把當前位置丟到出現位置
-		secPathObj = new Vector3 (firstPathObj.x, firstPathObj.y + 100.0f, firstPathObj.z);//計算出現位置的上面
+		secPathObj = new Vector3 (firstPathObj.x, firstPathObj.y + 200.0f, firstPathObj.z);//計算出現位置的上面
 		gameObject.transform.position = secPathObj;//把物件丟到當前位置的上面
 	}
 	
