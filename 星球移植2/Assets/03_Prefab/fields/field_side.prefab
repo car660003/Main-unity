@@ -387,10 +387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterLevel: {fileID: 0}
-  field01: 0
-  field01Alpha: 255
-  field02: 0
-  field02Alpha: 0
+  meshRender: {fileID: 0}
+  rend: {fileID: 0}
 --- !u!114 &114634597437923840
 MonoBehaviour:
   m_ObjectHideFlags: 1

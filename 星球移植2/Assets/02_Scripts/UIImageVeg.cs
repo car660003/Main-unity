@@ -89,6 +89,7 @@ public class UIImageVeg : MonoBehaviour {
 		changeFlag = true;
 	}
 
+}
 	/*private float calculateNewSpeed(){
 		//因為每次移動都是 Obj 在移動，所以要取得 Obj 和 PathB 的距離
 		tmp = Vector3.Distance(Obj.transform.position, PathB.transform.position);
@@ -100,4 +101,3 @@ public class UIImageVeg : MonoBehaviour {
 		}else
 			return (firstSpeed / tmp);
 	}*/
-}
