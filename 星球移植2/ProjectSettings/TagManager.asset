@@ -21,6 +21,7 @@ TagManager:
   - carrot
   - eggplant
   - tomato
+  - "\u73A9\u5BB6"
   layers:
   - Default
   - TransparentFX
