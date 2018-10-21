@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class harvestVegetable : MonoBehaviour {
-    private TasksPerformed task;
+	[SerializeField] private TasksPerformed task;
 	public waterLevel waterLevel;
 	public bool ontri = false;
 
@@ -48,36 +48,36 @@ public class harvestVegetable : MonoBehaviour {
 			Destroy (createEggplant); 
 
 				if(gameObject.tag=="pumpkin"){
-					pumpkin.Count++;
+					pumpkin.Count = pumpkin.Count + 1;
 					task.addplant("pumpkin");
 					waterLevel.water = 0;
 					waterLevel.isPlanting = false;
-					Destroy(gameObject);
+					Destroy(gameObject,1);
 
 				}else if(gameObject.tag=="cucumber"){
 					cucumber.Count++;
-					task.addplant("cucumber");
+					//task.addplant("cucumber");
 					waterLevel.water = 0;
 					waterLevel.isPlanting = false;
 					Destroy(gameObject);
 
 				}else if(gameObject.tag=="carrot"){
 					carrot.Count++;
-					task.addplant("carrot");
+					//task.addplant("carrot");
 					waterLevel.water = 0;
 					waterLevel.isPlanting = false;
 					Destroy(gameObject);
 
 				}else if(gameObject.tag=="eggplant"){
 					eggplant.Count++;
-					task.addplant("eggplant");
+					//task.addplant("eggplant");
 					waterLevel.water = 0;
 					waterLevel.isPlanting = false;
 					Destroy(gameObject);
 
 				}else if(gameObject.tag=="tomato"){
 					tomato.Count++;
-					task.addplant("tomato");
+					//task.addplant("tomato");
 					waterLevel.water = 0;
 					waterLevel.isPlanting = false;
 					Destroy(gameObject);

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TasksPerformed : MonoBehaviour {
-    public static string[] plant = { "南瓜", "小黃瓜","紅蘿蔔",};
+    public static string[] plant = { "南瓜", "小黃瓜","紅蘿蔔"};
 	[SerializeField]public Tasks m_task;
 
     public Text text;

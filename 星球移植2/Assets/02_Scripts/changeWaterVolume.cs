@@ -176,6 +176,10 @@ public class changeWaterVolume : MonoBehaviour {
 
 		isPlanting = waterLevel.isPlanting;
 
+		if(!isPlanting){
+			meshRender = Resources.Load("showWaterVolume/Materials/0水量") as Material;
+			rend.material = meshRender;
+		}
 
 		//distance = Vector3.Distance (Camera.main.transform.position, transform.position);
 		//if (distance <= 10/*&&waterLevel.isPlanting==true/*&&waterLevel.water>=3*/) {

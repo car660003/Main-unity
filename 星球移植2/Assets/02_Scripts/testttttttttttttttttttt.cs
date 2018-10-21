@@ -7,6 +7,7 @@ public class testttttttttttttttttttt : MonoBehaviour {
 
 
 	public int pumpkinnnn;
+	public int pumpkinCount;
 	public int carrottttt;
 	public int eggggggggg;
 	public int cucucucucu;
@@ -23,6 +24,8 @@ public class testttttttttttttttttttt : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		pumpkin.Count = pumpkinnnn;
+		pumpkinCount = pumpkin.Count;
+
 		carrot.Count = carrottttt;
 		eggplant.Count = eggggggggg;
 		cucumber.Count = cucucucucu;
