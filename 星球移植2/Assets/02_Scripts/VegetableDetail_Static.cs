@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class VegetableMainMessange{
-	public static int money = 0;
+	public static int money = 500;
 }
 
 public static class VegetableDetail_Static {
@@ -20,6 +20,9 @@ public static class pumpkin{//60
 	public static float growing_03To04_time = 10;//25
 	public static float hp = 200;
 	public static float hpPerS = 2;//值越大，扣的hp越少(每秒)
+	public static int buyingPrice = 60;//購買種子的價格
+	public static int salePrice = 70;//作物賣出的價格
+	public static int seedAmount = 0;//種子的數量
 }
 
 public static class cucumber{//27.5
@@ -30,6 +33,9 @@ public static class cucumber{//27.5
 	public static float growing_03To04_time = 300;//5
 	public static float hp = 200;
 	public static float hpPerS = 2;//值越大，扣的hp越少(每秒)
+	public static int buyingPrice = 30;
+	public static int salePrice = 40;
+	public static int seedAmount = 0;
 }
 
 public static class carrot{//45
@@ -40,6 +46,9 @@ public static class carrot{//45
 	public static float growing_03To04_time = 900;//15
 	public static float hp = 200;
 	public static float hpPerS = 2;//值越大，扣的hp越少(每秒)
+	public static int buyingPrice = 50;
+	public static int salePrice = 60;
+	public static int seedAmount = 0;
 }
 
 public static class eggplant{//42
@@ -50,6 +59,9 @@ public static class eggplant{//42
 	public static float growing_03To04_time = 900;//15
 	public static float hp = 200;
 	public static float hpPerS = 2;//值越大，扣的hp越少(每秒)
+	public static int buyingPrice = 40;
+	public static int salePrice = 50;
+	public static int seedAmount = 0;
 }
 
 public static class tomato{//59.5
@@ -60,4 +72,7 @@ public static class tomato{//59.5
 	public static float growing_03To04_time = 1800;//30
 	public static float hp = 200;
 	public static float hpPerS = 2;//值越大，扣的hp越少(每秒)
+	public static int buyingPrice = 70;
+	public static int salePrice = 80;
+	public static int seedAmount = 0;
 }
