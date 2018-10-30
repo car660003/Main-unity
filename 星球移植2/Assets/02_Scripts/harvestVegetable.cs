@@ -48,7 +48,7 @@ public class harvestVegetable : MonoBehaviour {
 			Destroy (createEggplant); 
 
 				if(gameObject.tag=="pumpkin"){
-					pumpkin.Count = pumpkin.Count ++;
+					pumpkin.Count ++;
 					task.addplant("pumpkin");
 					waterLevel.water = 0;
 					waterLevel.isPlanting = false;

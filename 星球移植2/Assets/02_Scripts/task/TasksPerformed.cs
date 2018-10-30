@@ -74,7 +74,8 @@ public class TasksPerformed : MonoBehaviour {
     void Update()
     {
         
-        text.text = this.m_task._item[0].ToString() + ": " + this.m_task._numcount[0].ToString() + "/" + this.m_task._num[0].ToString();
+       text.text = this.m_task._item[0].ToString() + ": " + this.m_task._numcount[0].ToString() + "/" + this.m_task._num[0].ToString();
+		//text.text=pumpkin.Count.ToString();
 
     }
 
