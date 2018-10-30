@@ -4,7 +4,11 @@ using UnityEngine;
 
 public static class VegetableMainMessange{
 	public static int money = 500;
+<<<<<<< HEAD
 	public static GameObject asd;
+=======
+	public static int haha = 100;
+>>>>>>> 8feb5a941abc999dfb6e948895b533174c3be2ff
 }
 
 public static class VegetableDetail_Static {
