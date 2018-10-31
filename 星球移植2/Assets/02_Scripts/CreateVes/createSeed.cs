@@ -51,4 +51,17 @@ public class createSeed : MonoBehaviour {
 		//prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
 	}
 
+	public void	createSickle(){
+		GameObject pfb = Resources.Load ("sickle/sickle") as GameObject;//產生Pumpkin
+		GameObject prefabInstance = Instantiate (pfb);
+		//prefabInstance.transform.parent = this.transform;//設為子物件
+		//prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
+	}
+
+	public void	createWateringDevice(){
+		GameObject pfb = Resources.Load ("Watering device") as GameObject;//產生Pumpkin
+		GameObject prefabInstance = Instantiate (pfb);
+		//prefabInstance.transform.parent = this.transform;//設為子物件
+		//prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
+	}
 }
