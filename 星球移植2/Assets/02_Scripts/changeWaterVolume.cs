@@ -18,8 +18,8 @@ public class changeWaterVolume : MonoBehaviour {
 	public createEggplant createEggplant;
 	public float hp;
 
-
-	//public Texture texture;
+	public ParticleSystem star;
+	public bool isStar = true;
 
 	// Use this for initialization
 	void Start () {
@@ -42,6 +42,10 @@ public class changeWaterVolume : MonoBehaviour {
 			if (createPumpkin.remainingSeconds_toString.Equals ("已成熟!")) {
 				meshRender = Resources.Load ("showWaterVolume/Materials/成熟") as Material;
 				rend.material = meshRender;
+				if(isStar){
+					star.GetComponent<ParticleSystem> ().Play ();
+					isStar = false;
+				}
 			} else {
 				if(hp>=pumpkin.hp){
 					meshRender = Resources.Load("showWaterVolume/Materials/100水量") as Material;
@@ -69,6 +73,7 @@ public class changeWaterVolume : MonoBehaviour {
 			if (createCarrot.remainingSeconds_toString.Equals ("已成熟!")) {
 				meshRender = Resources.Load ("showWaterVolume/Materials/成熟") as Material;
 				rend.material = meshRender;
+				gameObject.GetComponentInChildren<ParticleSystem> ().Play ();
 			} else {
 
 				if(hp>=carrot.hp){
@@ -96,6 +101,7 @@ public class changeWaterVolume : MonoBehaviour {
 			if (createTomato.remainingSeconds_toString.Equals ("已成熟!")) {
 				meshRender = Resources.Load ("showWaterVolume/Materials/成熟") as Material;
 				rend.material = meshRender;
+				gameObject.GetComponentInChildren<ParticleSystem> ().Play ();
 			} else {
 
 				if(hp>=tomato.hp){
@@ -123,6 +129,7 @@ public class changeWaterVolume : MonoBehaviour {
 			if (createCucumber.remainingSeconds_toString.Equals ("已成熟!")) {
 				meshRender = Resources.Load ("showWaterVolume/Materials/成熟") as Material;
 				rend.material = meshRender;
+				gameObject.GetComponentInChildren<ParticleSystem> ().Play ();
 			} else {
 
 				if(hp>=cucumber.hp){
@@ -150,6 +157,7 @@ public class changeWaterVolume : MonoBehaviour {
 			if (createEggplant.remainingSeconds_toString.Equals ("已成熟!")) {
 				meshRender = Resources.Load ("showWaterVolume/Materials/成熟") as Material;
 				rend.material = meshRender;
+				gameObject.GetComponentInChildren<ParticleSystem> ().Play ();
 			} else {
 
 				if(hp>=eggplant.hp){
@@ -179,6 +187,7 @@ public class changeWaterVolume : MonoBehaviour {
 		if(!isPlanting){
 			meshRender = Resources.Load("showWaterVolume/Materials/0水量") as Material;
 			rend.material = meshRender;
+			isStar = true;
 		}
 
 		//distance = Vector3.Distance (Camera.main.transform.position, transform.position);
