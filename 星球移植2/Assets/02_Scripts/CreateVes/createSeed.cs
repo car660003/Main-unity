@@ -20,48 +20,48 @@ public class createSeed : MonoBehaviour {
 		GameObject pfb = Resources.Load ("pumpkin/pumpkin_00_Seed") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		//prefabInstance.transform.parent = this.transform;//設為子物件
-		//prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
 	}
 
 	public void	createCucumberSeed(){
 		GameObject pfb = Resources.Load ("cucumber/cucumber_00_Seed") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		//prefabInstance.transform.parent = this.transform;//設為子物件
-		//prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
 	}
 
 	public void	createCarrotSeed(){
 		GameObject pfb = Resources.Load ("carrot/carrot_00_Seed") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		//prefabInstance.transform.parent = this.transform;//設為子物件
-		//prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
 	}
 
 	public void	createEggplantSeed(){
 		GameObject pfb = Resources.Load ("eggplant/eggplant_00_Seed") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		//prefabInstance.transform.parent = this.transform;//設為子物件
-		//prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
 	}
 
 	public void	createTomatoSeed(){
 		GameObject pfb = Resources.Load ("tomato/tomato_00_Seed") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		//prefabInstance.transform.parent = this.transform;//設為子物件
-		//prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
 	}
 
 	public void	createSickle(){
 		GameObject pfb = Resources.Load ("sickle/sickle") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		//prefabInstance.transform.parent = this.transform;//設為子物件
-		//prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
 	}
 
 	public void	createWateringDevice(){
 		GameObject pfb = Resources.Load ("Watering device") as GameObject;//產生Pumpkin
 		GameObject prefabInstance = Instantiate (pfb);
 		//prefabInstance.transform.parent = this.transform;//設為子物件
-		//prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
+		prefabInstance.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z);
 	}
 }

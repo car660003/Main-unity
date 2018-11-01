@@ -27,10 +27,10 @@ public static class pumpkin{//60
 
 public static class cucumber{//27.5
 	public static int Count = 0;
-	public static float growing_00To01_time = 240;//4
-	public static float growing_01To02_time = 210;//3.5
-	public static float growing_02To03_time = 900;//15
-	public static float growing_03To04_time = 300;//5
+	public static float growing_00To01_time = 10;//4
+	public static float growing_01To02_time = 10;//3.5
+	public static float growing_02To03_time = 10;//15
+	public static float growing_03To04_time = 10;//5
 	public static float hp = 200;
 	public static float hpPerS = 2;//值越大，扣的hp越少(每秒)
 	public static int buyingPrice = 30;
@@ -40,10 +40,10 @@ public static class cucumber{//27.5
 
 public static class carrot{//45
 	public static int Count = 0;
-	public static float growing_00To01_time = 450;//7.5
-	public static float growing_01To02_time = 450;//7.5
-	public static float growing_02To03_time = 900;//15
-	public static float growing_03To04_time = 900;//15
+	public static float growing_00To01_time = 10;//7.5
+	public static float growing_01To02_time = 10;//7.5
+	public static float growing_02To03_time = 10;//15
+	public static float growing_03To04_time = 10;//15
 	public static float hp = 200;
 	public static float hpPerS = 2;//值越大，扣的hp越少(每秒)
 	public static int buyingPrice = 50;
@@ -53,10 +53,10 @@ public static class carrot{//45
 
 public static class eggplant{//42
 	public static int Count = 0;
-	public static float growing_00To01_time = 180;//3
-	public static float growing_01To02_time = 540;//9
-	public static float growing_02To03_time = 900;//15
-	public static float growing_03To04_time = 900;//15
+	public static float growing_00To01_time = 10;//3
+	public static float growing_01To02_time = 10;//9
+	public static float growing_02To03_time = 10;//15
+	public static float growing_03To04_time = 10;//15
 	public static float hp = 200;
 	public static float hpPerS = 2;//值越大，扣的hp越少(每秒)
 	public static int buyingPrice = 40;
@@ -66,10 +66,10 @@ public static class eggplant{//42
 
 public static class tomato{//59.5
 	public static int Count = 0;
-	public static float growing_00To01_time = 270;//4.5
-	public static float growing_01To02_time = 600;//10
-	public static float growing_02To03_time = 900;//15
-	public static float growing_03To04_time = 1800;//30
+	public static float growing_00To01_time = 10;//4.5
+	public static float growing_01To02_time = 10;//10
+	public static float growing_02To03_time = 10;//15
+	public static float growing_03To04_time = 10;//30
 	public static float hp = 200;
 	public static float hpPerS = 2;//值越大，扣的hp越少(每秒)
 	public static int buyingPrice = 70;

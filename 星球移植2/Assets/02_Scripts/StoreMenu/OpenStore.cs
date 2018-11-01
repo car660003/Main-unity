@@ -17,12 +17,12 @@ public class OpenStore : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider player){
-		if (player.gameObject.name == "[CameraRig]") {
+		if (player.gameObject.name == "Camera (eye)") {
 			store.SetActive(true);
 		}
 	}
 	void OnTriggerExit(Collider player){
-		if (player.gameObject.name == "[CameraRig]") {
+		if (player.gameObject.name == "Camera (eye)") {
 			store.SetActive(false);
 		}
 	}

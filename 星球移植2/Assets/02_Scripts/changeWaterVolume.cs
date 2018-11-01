@@ -73,7 +73,10 @@ public class changeWaterVolume : MonoBehaviour {
 			if (createCarrot.remainingSeconds_toString.Equals ("已成熟!")) {
 				meshRender = Resources.Load ("showWaterVolume/Materials/成熟") as Material;
 				rend.material = meshRender;
-				gameObject.GetComponentInChildren<ParticleSystem> ().Play ();
+				if(isStar){
+					star.GetComponent<ParticleSystem> ().Play ();
+					isStar = false;
+				}
 			} else {
 
 				if(hp>=carrot.hp){
@@ -101,7 +104,10 @@ public class changeWaterVolume : MonoBehaviour {
 			if (createTomato.remainingSeconds_toString.Equals ("已成熟!")) {
 				meshRender = Resources.Load ("showWaterVolume/Materials/成熟") as Material;
 				rend.material = meshRender;
-				gameObject.GetComponentInChildren<ParticleSystem> ().Play ();
+				if(isStar){
+					star.GetComponent<ParticleSystem> ().Play ();
+					isStar = false;
+				}
 			} else {
 
 				if(hp>=tomato.hp){
@@ -129,7 +135,10 @@ public class changeWaterVolume : MonoBehaviour {
 			if (createCucumber.remainingSeconds_toString.Equals ("已成熟!")) {
 				meshRender = Resources.Load ("showWaterVolume/Materials/成熟") as Material;
 				rend.material = meshRender;
-				gameObject.GetComponentInChildren<ParticleSystem> ().Play ();
+				if(isStar){
+					star.GetComponent<ParticleSystem> ().Play ();
+					isStar = false;
+				}
 			} else {
 
 				if(hp>=cucumber.hp){
@@ -157,7 +166,10 @@ public class changeWaterVolume : MonoBehaviour {
 			if (createEggplant.remainingSeconds_toString.Equals ("已成熟!")) {
 				meshRender = Resources.Load ("showWaterVolume/Materials/成熟") as Material;
 				rend.material = meshRender;
-				gameObject.GetComponentInChildren<ParticleSystem> ().Play ();
+				if(isStar){
+					star.GetComponent<ParticleSystem> ().Play ();
+					isStar = false;
+				}
 			} else {
 
 				if(hp>=eggplant.hp){
