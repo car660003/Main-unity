@@ -8,7 +8,7 @@ public class Lock : MonoBehaviour {
 
 	public void AcktiveLockbt(){
 		//		Cube.SetActive(true);
-		if (pumpkin.Count==1) 
+		if (pumpkin.Count>=1) 
 		{
 			Lockbt.SetActive (true);
 		}
@@ -24,6 +24,7 @@ public class Lock : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        AcktiveLockbt();
+
+    }
 }
