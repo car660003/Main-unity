@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 4337478838074618}
   - component: {fileID: 212160527061698398}
   - component: {fileID: 114505628774383166}
+  - component: {fileID: 114234077870794832}
   m_Layer: 5
   m_Name: UIImageVegetable
   m_TagString: Untagged
@@ -100,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1813659033126680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -196.9, y: 99, z: 0}
+  m_LocalPosition: {x: -174.8, y: -3, z: 0}
   m_LocalScale: {x: 2.7027106, y: 2.702703, z: 2.702703}
   m_Children: []
   m_Father: {fileID: 224000410595289222}
@@ -112,8 +113,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1007649300800614}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -196.90001, y: 99, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -174.8, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224000410595289222}
@@ -126,12 +127,37 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1098984958826696}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -117.3, y: -88.9, z: 0}
+  m_LocalPosition: {x: -137.70003, y: -88.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224000410595289222}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114234077870794832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813659033126680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2456cde90d1119748b17f5c116b3b37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pumpkinCount: 0
+  cucumberCount: 0
+  carrotCount: 0
+  eggplantCount: 0
+  tomatoCount: 0
+  changeFlag: 0
+  PathA: {fileID: 1007649300800614}
+  PathB: {fileID: 1098984958826696}
+  Obj: {fileID: 1813659033126680}
+  speed: 1
+  tmp: 0
+  firstPathObj: {x: 0, y: 0, z: 0}
+  secPathObj: {x: 0, y: 0, z: 0}
+  bbbb: 0
 --- !u!114 &114477759958016930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -159,7 +185,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1813659033126680}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3a7e8e9fd990e489aa627a64e9c7bc, type: 3}
   m_Name: 
@@ -308,7 +334,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 105.79999, y: 0.8000021}
+  m_AnchoredPosition: {x: 116.3, y: -3.8}
   m_SizeDelta: {x: 1115, y: 355}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224772616521598922
@@ -326,6 +352,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -118.5, y: -79}
+  m_AnchoredPosition: {x: -138.9, y: -79}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
