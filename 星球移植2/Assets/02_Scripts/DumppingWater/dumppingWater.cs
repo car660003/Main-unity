@@ -10,16 +10,21 @@ public class dumppingWater : MonoBehaviour {
 	public float waterVolume = 30;
 
 	public GameObject insideWater;
-	public float insideWaterHigh;
+	//public float insideWaterHigh;
+
+	public Collider well;
+	public Vector3 temp ;
 
 	// Use this for initialization
 	void Start () {
 		
+		well = GameObject.Find("水井").GetComponent<Collider> ();
+		temp = insideWater.transform.localPosition; // copy to an auxiliary variable...
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		
 		//判斷合理傾斜角度才讓dumpping+1
 		if (transform.eulerAngles.z > 30 && transform.eulerAngles.z < 200) {
 			dumpping += 1;
@@ -29,58 +34,63 @@ public class dumppingWater : MonoBehaviour {
 		if (transform.eulerAngles.z < 30 && transform.eulerAngles.z > -160) {
 			dumpping = 0;
 		}
-		//當傾協時播放waterParticle
-		if(dumpping==1){
+
+		//當傾協時播放waterParticle(第一版)
+		/*if(dumpping==1){
 			gameObject.GetComponentInChildren<ParticleSystem> ().Play ();
 		}else if (dumpping==0) {
 			//當dumpping=0時，停止播放waterParticle
 			gameObject.GetComponentInChildren<ParticleSystem>().Stop();
-		}
+		}*/
 
-		//水面無法設定到正確的位置
 
-		/*//當傾協時播放waterParticle
+
+		//當傾協時播放waterParticle
 		if(dumpping==1&&waterVolume>=0){
 			gameObject.GetComponentInChildren<ParticleSystem> ().Play ();
 		}else if (dumpping==0||waterVolume<0) {
 			//當dumpping=0時，停止播放waterParticle
 			gameObject.GetComponentInChildren<ParticleSystem>().Stop();
-		}*/
+		}
 
+		//水面無法設定到正確的位置
 		//判斷水量大小，調整水面高低
-		/*if(waterVolume>=maxWaterVolume*0.75){
-			//insideWaterHigh = 0.278f;
-			//insideWater.transform.position.y = insideWaterHigh;
-			//insideWater.transform.position = new Vector3(insideWater.transform.position.x,this.transform.position.y+0.278f, this.transform.position.z);
-			Vector3 temp = insideWater.transform.position; // copy to an auxiliary variable...
-			temp.y = 0.278f; // modify the component you want in the variable...
-			insideWater.transform.position = temp; // and save the modified value 
+		if(waterVolume>=maxWaterVolume*0.75){
+			//Vector3 temp = insideWater.transform.position; // copy to an auxiliary variable...
+			//temp.y = (this.transform.position.y+0.1f); // modify the component you want in the variable...
+			temp.y = 0.278f;
+			insideWater.transform.localPosition = temp; // and save the modified value 
 			
 		}else if(waterVolume>=maxWaterVolume*0.4&&waterVolume<=maxWaterVolume*0.74){
-			//insideWaterHigh = 0.007f;
-			//insideWater.transform.position.y = insideWaterHigh;
-			//insideWater.transform.position = new Vector3(insideWater.transform.position.x,this.transform.position.y+0.007f, this.transform.position.z);
-			Vector3 temp = insideWater.transform.position; // copy to an auxiliary variable...
-			temp.y = 0.007f; // modify the component you want in the variable...
-			insideWater.transform.position = temp; // and save the modified value 
+			//Vector3 temp = insideWater.transform.position; // copy to an auxiliary variable...
+			//temp.y = (this.transform.position.y+0.0f); // modify the component you want in the variable...
+			temp.y = 0.007f;
+			insideWater.transform.localPosition = temp; // and save the modified value 
 
 		}else if(waterVolume>=maxWaterVolume*0.001&&waterVolume<=maxWaterVolume*0.39){
-			//insideWaterHigh = -0.47f;
-			//insideWater.transform.position.y = insideWaterHigh;
-			//insideWater.transform.position = new Vector3(insideWater.transform.position.x,this.transform.position.y-0.47f, this.transform.position.z);
-			Vector3 temp = insideWater.transform.position; // copy to an auxiliary variable...
-			temp.y = -0.47f; // modify the component you want in the variable...
-			insideWater.transform.position = temp; // and save the modified value 
+			//Vector3 temp = insideWater.transform.position; // copy to an auxiliary variable...
+			//temp.y = (this.transform.position.y-0.1f); // modify the component you want in the variable...
+			temp.y = -0.47f;
+			insideWater.transform.localPosition = temp; // and save the modified value 
 
 		}else if(waterVolume<=0){
-			//insideWaterHigh = -0.655f;
-			//insideWater.transform.position.y = insideWaterHigh;
-			//insideWater.transform.position = new Vector3(insideWater.transform.position.x,this.transform.position.y-0.655f, this.transform.position.z);
-			Vector3 temp = insideWater.transform.position; // copy to an auxiliary variable...
-			temp.y = -0.655f; // modify the component you want in the variable...
-			insideWater.transform.position = temp; // and save the modified value 
+			//Vector3 temp = insideWater.transform.position; // copy to an auxiliary variable...
+			//temp.y = (this.transform.position.y-0.28f); // modify the component you want in the variable...
+			temp.y = -0.665f;
+			insideWater.transform.localPosition = temp; // and save the modified value 
 
-		}*/
+		}
+	}
+
+
+
+	void OnTriggerEnter(Collider 水井){
+		if(水井.tag=="well"){
+			waterVolume = maxWaterVolume;
+			well.enabled = false;
+
+		}
+
 	}
 }
 
