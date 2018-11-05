@@ -15,18 +15,28 @@ public class CreateGrass : MonoBehaviour {
 
 	public float Ins_Time = 1; //每幾秒生成一次。
 
+	public float createSec;//新的生成間隔秒數
+	public float passTime;
+
 	// Use this for initialization
 	void Start () {
 		//重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。
-		InvokeRepeating("Ins_Objs", Ins_Time, Ins_Time);
+		//InvokeRepeating("Ins_Objs", Ins_Time, Ins_Time);
 		for(int i=0;i<Points.Length-1;i++){
 			checkGrass [i] = false;
 		}
+		passTime = Random.Range (3.0f, 30.0f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+		if(createSec>=passTime){
+			Ins_Objs();
+			createSec = 0;
+			passTime = Random.Range (10.0f, 30.0f);
+		}
+		createSec += Time.deltaTime;
 	}
 
 	//生成物件函式。

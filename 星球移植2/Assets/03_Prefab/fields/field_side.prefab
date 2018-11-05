@@ -285,9 +285,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1158826395837050}
-  m_LocalRotation: {x: -0.000000014901159, y: -0.70710677, z: -0.7071068, w: -0.00000004470348}
-  m_LocalPosition: {x: -0.30808, y: 0.00011253, z: 0.24998}
-  m_LocalScale: {x: 1, y: 1.0000006, z: 1.0000005}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -13.353863, y: 0.0006737709, z: 0.2500251}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4808406174183046}
   - {fileID: 4575122434937212}
@@ -490,13 +490,14 @@ MonoBehaviour:
   createEggplant: {fileID: 0}
   hp: 0
   star: {fileID: 198444676876501884}
+  isStar: 1
 --- !u!114 &114474290601783388
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1051980576467518}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fd2e8874f60266498a388d7229a1bac, type: 3}
   m_Name: 
