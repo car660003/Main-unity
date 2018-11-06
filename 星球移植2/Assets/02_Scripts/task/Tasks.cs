@@ -24,15 +24,21 @@ public class Tasks {
 			}
 		}
 		if (overTask == true) {
+            Debug.Log("next task");
 			istask = true;
 		}
 	}
 
 	public void addNum(string cc){
-		for (int i = 0; i < _item.Length; i++) {
+        Debug.Log("addNum plant: " + cc);
+        for (int i = 0; i < _item.Length; i++) {
 			if (cc == _item [i]) {
-				if (_numcount [i] < _num [i])
+				if (_numcount [i] < _num[i])
+                {
 					_numcount [i]++;
+                    Debug.Log(_numcount[i]);
+                }
+                
 			}
 		}
 		isOverTask ();

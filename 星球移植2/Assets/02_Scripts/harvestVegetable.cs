@@ -35,7 +35,6 @@ public class harvestVegetable : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 	void OnTriggerEnter(Collider sickle){
 		
@@ -49,35 +48,35 @@ public class harvestVegetable : MonoBehaviour {
 
 				if(gameObject.tag=="pumpkin"){
 					pumpkin.Count ++;
-					task.addplant("pumpkin");
+					task.addplant("南瓜");
 					waterLevel.water = 0;
 					waterLevel.isPlanting = false;
 					Destroy(gameObject);
 
 				}else if(gameObject.tag=="cucumber"){
 					cucumber.Count++;
-					//task.addplant("cucumber");
-					waterLevel.water = 0;
+                //task.addplant("小黃瓜");
+                waterLevel.water = 0;
 					waterLevel.isPlanting = false;
 					Destroy(gameObject);
 
 				}else if(gameObject.tag=="carrot"){
 					carrot.Count++;
-					//task.addplant("carrot");
-					waterLevel.water = 0;
+                //task.addplant("紅蘿蔔");
+                waterLevel.water = 0;
 					waterLevel.isPlanting = false;
 					Destroy(gameObject);
 
 				}else if(gameObject.tag=="eggplant"){
 					eggplant.Count++;
-					//task.addplant("eggplant");
-					waterLevel.water = 0;
+                //task.addplant("茄子");
+                waterLevel.water = 0;
 					waterLevel.isPlanting = false;
 					Destroy(gameObject);
 
 				}else if(gameObject.tag=="tomato"){
 					tomato.Count++;
-					//task.addplant("tomato");
+					//task.addplant("番茄");
 					waterLevel.water = 0;
 					waterLevel.isPlanting = false;
 					Destroy(gameObject);

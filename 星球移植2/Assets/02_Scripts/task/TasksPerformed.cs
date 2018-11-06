@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TasksPerformed : MonoBehaviour {
-    public static string[] plant = { "南瓜", "小黃瓜","紅蘿蔔"};
+    public static string[] plant = { "南瓜", "小黃瓜", "紅蘿蔔","茄子","番茄" };
 	[SerializeField]public Tasks m_task;
 
     public Text text;
@@ -83,10 +83,11 @@ public class TasksPerformed : MonoBehaviour {
 		m_task.addNum (cc);
 
 		if (m_task.istask) {
-			m_taskNum++;
+			m_taskNum++;                //任務達成
+            VegetableMainMessange.money += 100;
+            StartCoroutine(waitforTask());
 		}
 
-        StartCoroutine (waitforTask());
 
 	}
 
@@ -100,33 +101,36 @@ public class TasksPerformed : MonoBehaviour {
 		case 1:
 			m_task = _task1;
 			break;
-		case 2:
+		/*case 2:
 			m_task = _task2;
 			break;
-		/*case 3:
-			m_task = _task3;
-			break;
-		case 4:
-			m_task = _task4;
-			break;
-		case 5:
-			m_task = _task5;
-			break;
-		case 6:
-			m_task = _task6;
-			break;
-		case 7:
-			m_task = _task7;
-			break;
-		case 8:
-			m_task = _task8;
-			break;
-		case 9:
-			m_task = _task9;
-			break;
-		case 10:
-			m_task = _task10;
-			break;*/
+            case 3:
+                m_task = _task3;
+                break;
+            case 4:
+                m_task = _task4;
+                break;
+            case 5:
+                m_task = _task5;
+                break;
+            case 6:
+                m_task = _task6;
+                break;
+            case 7:
+                m_task = _task7;
+                break;
+            case 8:
+                m_task = _task8;
+                break;
+            case 9:
+                m_task = _task9;
+                break;
+            case 10:
+                m_task = _task10;
+                break;*/
+            default:
+                
+                break;
 		}
 	}
 
