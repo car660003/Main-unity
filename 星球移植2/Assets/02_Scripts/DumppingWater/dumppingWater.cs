@@ -87,7 +87,7 @@ public class dumppingWater : MonoBehaviour {
 	void OnTriggerEnter(Collider 水井){
 		if(水井.tag=="well"){
 			waterVolume = maxWaterVolume;
-			well.enabled = false;
+			//well.enabled = false;
 
 		}
 
