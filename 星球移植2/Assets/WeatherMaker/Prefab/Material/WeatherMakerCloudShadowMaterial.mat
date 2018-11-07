@@ -67,7 +67,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FogCover: 0.17
+    - _FogCover: 0.65
     - _FogDensity: 0
     - _FogNoiseMaskRotationCos: 0
     - _FogNoiseMaskRotationSin: 0
@@ -98,4 +98,4 @@ Material:
     - _FogNoiseMaskOffset: {r: 0, g: 0, b: 0, a: 1}
     - _FogNoiseMaskVelocity: {r: 0.1, g: 0.2, b: 0, a: 0}
     - _FogNoiseVelocity: {r: 0.02, g: -0.03, b: 0, a: 0}
-    - _FogShadowCenterPoint: {r: -188.8862, g: 565.8673, b: 479.94193, a: 0}
+    - _FogShadowCenterPoint: {r: 215.10692, g: 508.6353, b: 581.6612, a: 0}

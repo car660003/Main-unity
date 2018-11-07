@@ -25,13 +25,13 @@ public class TasksPerformed : MonoBehaviour {
 
 
     private string[] _item1 = { plant[0]};
-	private int[] _num1 = { 4};
+	private int[] _num1 = { 1};
 	private string[] _item2 = { plant[1] };
     private int[] _num2 = { 3};
-	private string[] _item3;
-	private int[] _num3;
-	private string[] _item4;
-	private int[] _num4;
+	private string[] _item3 = { plant[2] };
+	private int[] _num3 = { 2};
+	private string[] _item4 = { plant[3] };
+    private int[] _num4 ={ 2};
 	private string[] _item5;
 	private int[] _num5;
 	private string[] _item6;
@@ -52,11 +52,15 @@ public class TasksPerformed : MonoBehaviour {
         
 		_task2 = new Tasks ();
 		_task2.setTasks (_item2,_num2);
-		_task3 = new Tasks ();
+        m_task = _task1;
+
+        _task3 = new Tasks ();
 		_task3.setTasks (_item3,_num3);
-		_task4 = new Tasks ();
+        m_task = _task1;
+        _task4 = new Tasks ();
 		_task4.setTasks (_item4,_num4);
-		_task5 = new Tasks ();
+        m_task = _task1;
+        _task5 = new Tasks ();
 		_task5.setTasks (_item5,_num5);
 		_task6 = new Tasks ();
 		_task6.setTasks (_item6,_num6);
@@ -101,7 +105,7 @@ public class TasksPerformed : MonoBehaviour {
 		case 1:
 			m_task = _task1;
 			break;
-		/*case 2:
+		case 2:
 			m_task = _task2;
 			break;
             case 3:
@@ -127,7 +131,7 @@ public class TasksPerformed : MonoBehaviour {
                 break;
             case 10:
                 m_task = _task10;
-                break;*/
+                break;
             default:
                 
                 break;
