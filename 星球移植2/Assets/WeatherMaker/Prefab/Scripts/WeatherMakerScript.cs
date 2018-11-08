@@ -578,10 +578,12 @@ namespace DigitalRuby.WeatherMaker
                 {
                     default:
                         ChangePrecipitation(null);
+						//VegetableMainMessange.isRain = false;
                         break;
 
-                    case WeatherMakerPrecipitationType.Rain:
-                        ChangePrecipitation(RainScript);
+					case WeatherMakerPrecipitationType.Rain:
+						ChangePrecipitation (RainScript);
+						//VegetableMainMessange.isRain = true;
                         break;
 
                     case WeatherMakerPrecipitationType.Snow:

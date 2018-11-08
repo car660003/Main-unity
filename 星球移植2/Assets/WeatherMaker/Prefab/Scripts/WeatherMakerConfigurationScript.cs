@@ -210,7 +210,7 @@ namespace DigitalRuby.WeatherMaker
         public void RainToggleChanged(bool isOn)
         {
             WeatherScript.Precipitation = (isOn ? WeatherMakerPrecipitationType.Rain : WeatherMakerPrecipitationType.None);
-        }
+		}
 
         public void SnowToggleChanged(bool isOn)
         {

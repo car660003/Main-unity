@@ -301,6 +301,11 @@ namespace DigitalRuby.WeatherMaker
             {
                 MistMaterial.SetFloat("_ParticleDitherLevel", DitherLevel);
             }
+			if(Intensity>=0.05){
+				VegetableMainMessange.isRain = true;
+			}else if(Intensity<0.05){
+				VegetableMainMessange.isRain = false;
+			}
         }
 
         protected virtual void FixedUpdate()
