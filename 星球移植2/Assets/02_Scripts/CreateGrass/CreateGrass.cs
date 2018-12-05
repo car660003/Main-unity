@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CreateGrass : MonoBehaviour {
 	
-	public int maxGrass = 8;//雜草的最大數量
+	public int maxGrass;//雜草的最大數量
 	public int nowGrass;//目前雜草的個數
 
 	public bool[] checkGrass;//存放某個點是否已長雜草

@@ -40,6 +40,10 @@ GameObject:
   - component: {fileID: 4339275370033008}
   - component: {fileID: 54869238488233824}
   - component: {fileID: 136014280316363780}
+  - component: {fileID: 114119319513305984}
+  - component: {fileID: 114444519174423232}
+  - component: {fileID: 114894003412004250}
+  - component: {fileID: 114510747021306528}
   m_Layer: 0
   m_Name: eggplant_00_Seed
   m_TagString: eggplantSeed
@@ -123,7 +127,7 @@ Transform:
   m_GameObject: {fileID: 1738295000993668}
   m_LocalRotation: {x: -0.16449606, y: 0.6877071, z: 0.6877071, w: 0.16449606}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.24340469, y: 0.4900298, z: 0.124543615}
+  m_LocalScale: {x: 0.1, y: 0.3, z: 0.05}
   m_Children: []
   m_Father: {fileID: 4339275370033008}
   m_RootOrder: 0
@@ -134,15 +138,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1693382663106020}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 8.559074, y: 0.76, z: -3.0012665}
+  m_LocalRotation: {x: -0.00491494, y: -0.7070897, z: -0.7070897, w: 0.00491494}
+  m_LocalPosition: {x: -1.4126434, y: 1.104, z: -5.273224}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4274478773501910}
   - {fileID: 4143830465348998}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -179.203}
 --- !u!4 &4524608845470998
 Transform:
   m_ObjectHideFlags: 1
@@ -318,6 +322,36 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114119319513305984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1693382663106020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 1
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 114444519174423232}
+  secondaryGrabActionScript: {fileID: 114894003412004250}
+  isUsable: 0
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  usingState: 0
 --- !u!114 &114119521170823184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -344,6 +378,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 40
   reverse: 0
+--- !u!114 &114444519174423232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1693382663106020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 0
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+--- !u!114 &114510747021306528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1693382663106020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipOnTouch: {fileID: 0}
+  strengthOnTouch: 0
+  durationOnTouch: 0
+  intervalOnTouch: 0.05
+  clipOnGrab: {fileID: 0}
+  strengthOnGrab: 0
+  durationOnGrab: 0
+  intervalOnGrab: 0.05
+  clipOnUse: {fileID: 0}
+  strengthOnUse: 0
+  durationOnUse: 0
+  intervalOnUse: 0.05
 --- !u!114 &114614462220617654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -357,6 +431,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 50
   reverse: 0
+--- !u!114 &114894003412004250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1693382663106020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135055097286116770
 SphereCollider:
   m_ObjectHideFlags: 1

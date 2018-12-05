@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Move : MonoBehaviour
 {  
+	public AudioSource moving;
+
 	/// <summary>  
 	/// 手柄位置  
 	/// </summary>  
@@ -44,39 +46,37 @@ public class Move : MonoBehaviour
 			Debug.Log("上");
 		}
 		//按下圆盘键  
-		if (deviceright.GetPress(SteamVR_Controller.ButtonMask.Touchpad))  
-		{  
+		if (deviceright.GetPress (SteamVR_Controller.ButtonMask.Touchpad)) {  
+			moving.volume = 1.0f;
 
-			Vector2 cc = deviceright.GetAxis();  
+			Vector2 cc = deviceright.GetAxis ();  
 
-			float angle = VectorAngle(new Vector2(1, 0), cc);  
+			float angle = VectorAngle (new Vector2 (1, 0), cc);  
 
 			//下  
-			if (angle > 45 && angle < 135)  
-			{  
+			if (angle > 45 && angle < 135) {  
 
-				player.Translate(-dic.forward * Time.deltaTime * speed);  
+				player.Translate (-dic.forward * Time.deltaTime * speed);  
 			}  
 			//上    
-			else if (angle < -45 && angle > -135)  
-			{  
+			else if (angle < -45 && angle > -135) {  
 				//Debug.Log("上");  
-				player.Translate(dic.forward * Time.deltaTime * speed);  
+				player.Translate (dic.forward * Time.deltaTime * speed);  
 			}  
 			//左    
-			else if ((angle < 180 && angle > 135) || (angle < -135 && angle > -180))  
-			{  
+			else if ((angle < 180 && angle > 135) || (angle < -135 && angle > -180)) {  
 				//Debug.Log("左");  
-				player.Translate(-dic.right * Time.deltaTime * speed);  
+				player.Translate (-dic.right * Time.deltaTime * speed);  
 			}  
 			//右    
-			else if ((angle > 0 && angle < 45) || (angle > -45 && angle < 0))  
-			{  
+			else if ((angle > 0 && angle < 45) || (angle > -45 && angle < 0)) {  
 				//Debug.Log("右");  
-				player.Translate(dic.right * Time.deltaTime * speed);  
+				player.Translate (dic.right * Time.deltaTime * speed);  
 			}  
 
-		}  
+		} else {
+			moving.volume = 0.0f;
+		}
 	}  
 
 

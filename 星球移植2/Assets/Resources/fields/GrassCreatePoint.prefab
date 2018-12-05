@@ -1296,7 +1296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b23a8f067cb525408eac2f1ef77f39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxGrass: 8
+  maxGrass: 5
   nowGrass: 0
   checkGrass: 000000000000000000000000000000000000000000000000000000
   Objects:

@@ -38,7 +38,7 @@ public class harvestVegetable : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider sickle){
 		
-			if(sickle.gameObject.name == "sickle"){
+		if(sickle.tag == "sickle"){
 
 			Destroy (createPumpkin); //刪除腳本
 			Destroy (createCarrot); 

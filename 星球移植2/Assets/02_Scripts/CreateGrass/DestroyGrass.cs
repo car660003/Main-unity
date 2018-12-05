@@ -25,7 +25,7 @@ public class DestroyGrass : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider sickle){
-		if(sickle.gameObject.name == "sickle"){
+		if(sickle.tag == "sickle"){
 			hitNum--;
 			if(grassCreatePoint.checkGrass[number]==true&&hitNum<=0){
 				hitNum = Random.Range (1, 6);

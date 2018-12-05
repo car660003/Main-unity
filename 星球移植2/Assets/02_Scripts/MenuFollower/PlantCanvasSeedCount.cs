@@ -15,15 +15,39 @@ public class PlantCanvasSeedCount : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(gameObject.tag=="pumpkin"){
-			text.text = pumpkin.seedAmount.ToString();
+			if(pumpkin.seedAmount<0){
+				text.text = "0";
+			}else if(pumpkin.seedAmount>=0){
+				text.text = pumpkin.seedAmount.ToString();
+			}
+
 		}else if(gameObject.tag=="cucumber"){
-			text.text = cucumber.seedAmount.ToString();
+			if(cucumber.seedAmount<0){
+				text.text = "0";
+			}else if(cucumber.seedAmount>=0){
+				text.text = cucumber.seedAmount.ToString();
+			}
+
 		}else if(gameObject.tag=="carrot"){
-			text.text = carrot.seedAmount.ToString();
+			if(carrot.seedAmount<0){
+				text.text = "0";
+			}else if(carrot.seedAmount>=0){
+				text.text = carrot.seedAmount.ToString();
+			}
+
 		}else if(gameObject.tag=="eggplant"){
-			text.text = eggplant.seedAmount.ToString();
+			if(eggplant.seedAmount<0){
+				text.text = "0";
+			}else if(eggplant.seedAmount>=0){
+				text.text = eggplant.seedAmount.ToString();
+			}
+
 		}else if(gameObject.tag=="tomato"){
-			text.text = tomato.seedAmount.ToString();
+			if(tomato.seedAmount<0){
+				text.text = "0";
+			}else if(tomato.seedAmount>=0){
+				text.text = tomato.seedAmount.ToString();
+			}
 		}
 	}
 }
