@@ -5,6 +5,7 @@ using UnityEngine;
 public static class VegetableMainMessange{
 	public static int money = 500;
 	public static bool isRain = false;
+	public static Camera mainCamera = null;
 }
 
 public static class VegetableDetail_Static {
