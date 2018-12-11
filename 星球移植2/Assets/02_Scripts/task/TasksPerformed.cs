@@ -25,15 +25,15 @@ public class TasksPerformed : MonoBehaviour {
 
 
     private string[] _item1 = { plant[0]};
-	private int[] _num1 = { 1};
+	private int[] _num1 = { 10};
 	private string[] _item2 = { plant[1] };
-    private int[] _num2 = { 3};
+    private int[] _num2 = { 10};
 	private string[] _item3 = { plant[2] };
-	private int[] _num3 = { 2};
+	private int[] _num3 = { 10};
 	private string[] _item4 = { plant[3] };
-    private int[] _num4 ={ 2};
-	private string[] _item5;
-	private int[] _num5;
+    private int[] _num4 ={ 10};
+	private string[] _item5 = { plant[4] };
+	private int[] _num5 = { 10 };
 	private string[] _item6;
 	private int[] _num6;
 	private string[] _item7;
@@ -62,7 +62,8 @@ public class TasksPerformed : MonoBehaviour {
         m_task = _task1;
         _task5 = new Tasks ();
 		_task5.setTasks (_item5,_num5);
-		_task6 = new Tasks ();
+        m_task = _task1;
+        _task6 = new Tasks ();
 		_task6.setTasks (_item6,_num6);
 		_task7 = new Tasks ();
 		_task7.setTasks (_item7,_num7);
