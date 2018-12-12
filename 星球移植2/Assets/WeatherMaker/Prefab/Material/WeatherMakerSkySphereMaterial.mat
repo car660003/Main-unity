@@ -103,8 +103,8 @@ Material:
     - _Emission: 1
     - _Exposure: 1
     - _FogCameraY: -1000
-    - _FogCover: 0.6205709
-    - _FogDensity: 0.3536128
+    - _FogCover: 0.5557127
+    - _FogDensity: 0.44457015
     - _FogLightAbsorption: 0.013
     - _FogNoiseHeightMultiplier: 50
     - _FogNoiseHeightScale: 0.002
