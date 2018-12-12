@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TasksPerformed : MonoBehaviour {
-    public static string[] plant = { "南瓜", "小黃瓜", "紅蘿蔔","茄子","番茄" };
+	public static string[] plant = { "收成南瓜10個", "收成小黃瓜10個", "收成紅蘿蔔15個","收成茄子10個","收成番茄15個" };
 	[SerializeField]public Tasks m_task;
 
     public Text text;
@@ -29,11 +29,11 @@ public class TasksPerformed : MonoBehaviour {
 	private string[] _item2 = { plant[1] };
     private int[] _num2 = { 10};
 	private string[] _item3 = { plant[2] };
-	private int[] _num3 = { 10};
+	private int[] _num3 = { 15};
 	private string[] _item4 = { plant[3] };
     private int[] _num4 ={ 10};
 	private string[] _item5 = { plant[4] };
-	private int[] _num5 = { 10 };
+	private int[] _num5 = { 15};
 	private string[] _item6;
 	private int[] _num6;
 	private string[] _item7;

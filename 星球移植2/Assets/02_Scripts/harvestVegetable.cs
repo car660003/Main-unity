@@ -48,7 +48,7 @@ public class harvestVegetable : MonoBehaviour {
 
 				if(gameObject.tag=="pumpkin"){
 					pumpkin.Count ++;
-					task.addplant("南瓜");
+				task.addplant("收成南瓜10個");
                   //  task.addplant("新手");
                     waterLevel.water = 0;
 					waterLevel.isPlanting = false;
@@ -56,28 +56,28 @@ public class harvestVegetable : MonoBehaviour {
 
 				}else if(gameObject.tag=="cucumber"){
 					cucumber.Count++;
-                task.addplant("小黃瓜");
+				task.addplant("收成小黃瓜10個");
                 waterLevel.water = 0;
 					waterLevel.isPlanting = false;
 					Destroy(gameObject);
 
 				}else if(gameObject.tag=="carrot"){
 					carrot.Count++;
-                task.addplant("紅蘿蔔");
+				task.addplant("收成紅蘿蔔15個");
                 waterLevel.water = 0;
 					waterLevel.isPlanting = false;
 					Destroy(gameObject);
 
 				}else if(gameObject.tag=="eggplant"){
 					eggplant.Count++;
-                task.addplant("茄子");
+				task.addplant("收成茄子10個");
                 waterLevel.water = 0;
 					waterLevel.isPlanting = false;
 					Destroy(gameObject);
 
 				}else if(gameObject.tag=="tomato"){
 					tomato.Count++;
-					task.addplant("番茄");
+				task.addplant("收成番茄15個");
 					waterLevel.water = 0;
 					waterLevel.isPlanting = false;
 					Destroy(gameObject);

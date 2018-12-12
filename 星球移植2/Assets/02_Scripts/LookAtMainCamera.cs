@@ -16,11 +16,11 @@ public class LookAtMainCamera : MonoBehaviour {
 
 
 		//当前对象始终面向摄像机。
-		this.transform.LookAt(Camera.main.transform.position);
-		this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(Camera.main.transform.position - this.transform.position),0);
+		//this.transform.LookAt(Camera.main.transform.position);
+		//this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(Camera.main.transform.position - this.transform.position),0);
 
-		//this.transform.LookAt(VegetableMainMessange.mainCamera.transform.position);
-		//this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(VegetableMainMessange.mainCamera.transform.position - this.transform.position),0);
+		this.transform.LookAt(VegetableMainMessange.mainCamera.transform.position);
+		this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(VegetableMainMessange.mainCamera.transform.position - this.transform.position),0);
 
 	}
 }
